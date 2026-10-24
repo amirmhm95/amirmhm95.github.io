@@ -114,6 +114,7 @@
     url: https://www.nature.com/articles/s41746-023-00853-4.pdf
   feature_title: Physics-informed physiological modeling
 - id: stress
+  feature_title: Integrated wearable sensor for mental stress detection
   title: An Integrated Human Stress Detection Sensor Using Supervised Algorithms
   authors:
   - A. Mohammadi

@@ -36,8 +36,6 @@
     url: https://arxiv.org/abs/2504.15214
   - label: PDF
     url: https://arxiv.org/pdf/2504.15214
-  - label: Code
-    url: https://github.com/Advanced-Vision-and-Learning-Lab/HLAST_DeepShip_ParameterEfficient
   feature_title: Distribution-aware foundation-model adaptation
 - id: neighborhood
   title: Neighborhood Feature Pooling for Remote Sensing Image Classification
@@ -48,7 +46,7 @@
   - P. Naikare
   - Z. Hampel-Arias
   - J. Peeples
-  venue: IEEE/CVF WACV Workshops
+  venue: IEEE/CVF Winter Conference on Applications of Computer Vision Workshops
   year: 2026
   status: Published
   group: peer_reviewed
@@ -72,7 +70,7 @@
   details: pp. 1–6
   doi: 10.1109/OCEANS58557.2025.11104751
   links:
-  - label: Publisher
+  - label: Paper
     url: https://doi.org/10.1109/OCEANS58557.2025.11104751
 - id: transfer
   title: Cross-Domain Knowledge Transfer for Underwater Acoustic Classification Using Pre-trained Models
@@ -89,7 +87,7 @@
   details: pp. 1–6
   doi: 10.1109/OCEANS58557.2025.11104545
   links:
-  - label: Publisher
+  - label: Paper
     url: https://doi.org/10.1109/OCEANS58557.2025.11104545
 - id: pinn
   title: Physics-informed neural networks for modeling physiological time series for cuffless blood pressure estimation
@@ -130,7 +128,7 @@
   image_alt: Integrated wearable electronics connect ECG and electrodermal sensing to a Bluetooth Low Energy controller.
   summary: An integrated wearable sensing platform, connecting low-power circuitry, physiological measurements, and supervised stress classification.
   links:
-  - label: Publisher
+  - label: Paper
     url: https://doi.org/10.1109/JSEN.2022.3157795
 - id: dual-encoder
   title: Parameter-efficient Dual-encoder Architecture with Differentiable Choquet Integral Fusion for Underwater Acoustic Classification

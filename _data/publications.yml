@@ -50,7 +50,6 @@
   year: 2026
   status: Published
   group: peer_reviewed
-  details: pp. 1393–1402
   links:
   - label: Paper
     url: https://openaccess.thecvf.com/content/WACV2026W/CV4EO/html/Nia_Neighborhood_Feature_Pooling_for_Remote_Sensing_Image_Classification_WACVW_2026_paper.html
@@ -67,7 +66,6 @@
   year: 2025
   status: Published
   group: peer_reviewed
-  details: pp. 1–6
   doi: 10.1109/OCEANS58557.2025.11104751
   links:
   - label: Paper
@@ -84,7 +82,6 @@
   year: 2025
   status: Published
   group: peer_reviewed
-  details: pp. 1–6
   doi: 10.1109/OCEANS58557.2025.11104545
   links:
   - label: Paper
@@ -100,7 +97,6 @@
   year: 2023
   status: Published
   group: peer_reviewed
-  details: vol. 6, article 110
   doi: 10.1038/s41746-023-00853-4
   image: /assets/images/research/physics-informed.webp
   image_alt: A neural network combines supervised and physiology-based losses to estimate blood pressure from bioimpedance.
@@ -122,7 +118,6 @@
   year: 2022
   status: Published
   group: peer_reviewed
-  details: vol. 22, no. 8, pp. 8216–8223
   doi: 10.1109/JSEN.2022.3157795
   image: /assets/images/research/wearable-sensing.webp
   image_alt: Integrated wearable electronics connect ECG and electrodermal sensing to a Bluetooth Low Energy controller.

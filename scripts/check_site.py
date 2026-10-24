@@ -88,13 +88,11 @@ pdf_text = " ".join(page.extract_text() for page in pdf.pages)
 normalize = lambda text: re.sub(r"\s+", " ", text).strip()
 pdf_text = normalize(pdf_text)
 publications = yaml.safe_load((ROOT / "_data/publications.yml").read_text())
+publication_page = pages[SITE / "publications/index.html"]
 for pub in publications:
-    if normalize(pub["title"]) not in pdf_text:
-        errors.append(f"Publication missing from PDF: {pub['id']}")
-assert len(pdf.pages) == 2, "Review the CV if pagination changes."
+    assert pub["id"] in publication_page.ids, f"Publication missing from website: {pub['id']}"
+assert len(pdf.pages) == 2, "Review the CV page-count label if pagination changes."
 assert all(page.extract_text().strip() for page in pdf.pages), "PDF contains an empty/image-only page."
-assert "Expected to graduate in December 2026" in pdf_text
-assert "PhD final examination passed in October 2026" in pdf_text
 assert "amir.mhm.ee@gmail.com" in pdf_text
 assert pdf.pages[0].extract_text().lstrip().startswith("Amirmohammad (Amir) Mohammadi"), "PDF reading order should start with the name."
 assert "U.S. Permanent Resident" in pdf_text
@@ -105,7 +103,8 @@ sitemap = (SITE / "sitemap.xml").read_text()
 assert "amirmmohammadi.github.io" not in sitemap
 assert "/blog/" not in sitemap
 print(f"Checked {len(pages)} HTML pages, all local links/resources/fragments, metadata, sitemap, and {len(pdf.pages)} PDF pages.")
-print(f"PDF includes all {len(publications)} publications/manuscripts and {sum(len(p.get('/Annots', [])) for p in pdf.pages)} link annotations.")
+annotation_count = sum(len(p["/Annots"]) if "/Annots" in p else 0 for p in pdf.pages)
+print(f"Website includes all {len(publications)} publications/manuscripts; the author-supplied PDF has {annotation_count} link annotations.")
 if errors:
     print("\n".join(errors), file=sys.stderr)
     sys.exit(1)

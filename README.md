@@ -44,23 +44,23 @@ bash scripts/site.sh build
 
 The generated `_site/` directory is ignored. Never commit `.tools/`, `.bundle/`, or generated review screenshots. npm is not required for the active portfolio. The old npm scripts and theme templates are retained only for the earlier theme.
 
-## Regenerate the PDF CV
+## Replace the PDF CV
 
-The comprehensive Pages CV is a read-only source document. It is **not** opened or modified by the generator. Website data is the editable source for the new public PDF.
+The public CV is an author-supplied PDF. Its fonts, layout, metadata, and contents are preserved exactly. Neither the comprehensive Pages document nor the source PDF is modified.
 
-With Python 3.9 or later, install `requirements-dev.txt` in a project-local environment, then run:
+Copy your final PDF to `documents/Amir_CV_2026.pdf`, keeping that filename so existing links continue to work. Alternatively, use the import helper:
 
 ```sh
-python3 scripts/build_cv.py
+python3 scripts/build_cv.py /path/to/Amir_CV_2026.pdf
 ```
 
 In this prepared working copy:
 
 ```sh
-PYTHONPATH="$PWD/.tools/python" PYTHONDONTWRITEBYTECODE=1 python3 scripts/build_cv.py
+PYTHONPATH="$PWD/.tools/python" PYTHONDONTWRITEBYTECODE=1 python3 scripts/build_cv.py /path/to/Amir_CV_2026.pdf
 ```
 
-This replaces `documents/Amir_CV_2026.pdf` and updates its page count in `_pages/cv.html`. It embeds fonts and selectable text, preserves author order, and adds clickable paper/profile links. It uses a single-column layout and standard section headings. Footers are drawn after the page body to preserve text-extraction order. Methods and task keywords appear in accomplishment bullets; the PDF skills section lists programming languages, libraries, and development tools. Review pagination after substantive changes; the current CV has two pages. Build the site again afterward.
+The helper copies bytes without regeneration or restyling, verifies that the source and copy are identical, and updates the page-count label in the HTML overview. It requires an explicit source path and never opens Pages. Rebuild the website afterward. Website biography/publication data is maintained independently from the author-edited PDF.
 
 ## Verify changes
 
@@ -79,7 +79,7 @@ PYTHONPATH="$PWD/.tools/python" PYTHONDONTWRITEBYTECODE=1 python3 scripts/check_
 PYTHONPATH="$PWD/.tools/python" PYTHONDONTWRITEBYTECODE=1 PLAYWRIGHT_BROWSERS_PATH="$PWD/.tools/browsers" TMPDIR="$PWD/.tools/tmp" python3 scripts/check_browser.py
 ```
 
-The static check validates local links, images, fragments, canonical URLs, sitemap exclusions, PDF coverage, career milestones, and the PDF’s initial reading order. Browser checks cover six screen widths (320–1440px), 200% text enlargement, keyboard navigation, visible focus, reduced-motion configuration, print behavior, and image loading. The 320px layout also tests reflow equivalent to a 1280px browser viewport at 400% zoom. Screenshots and results are saved only in `.tools/review/`.
+The static check validates local links, images, fragments, canonical URLs, sitemap exclusions, publication coverage, PDF delivery, and the PDF’s initial reading order. Browser checks cover six screen widths (320–1440px), 200% text enlargement, keyboard navigation, visible focus, reduced-motion configuration, print behavior, and image loading. The 320px layout also tests reflow equivalent to a 1280px browser viewport at 400% zoom. Screenshots and results are saved only in `.tools/review/`.
 
 When `.tools/axe.min.js` exists, the browser script also runs axe WCAG A/AA checks. These automated checks complement manual review; they do not replace assistive-technology testing. External publishers may block automated requests even when a link works in a regular browser.
 

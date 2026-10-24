@@ -29,14 +29,14 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Amir Mohammadi, home">Amir Mohammadi<span>Research portfolio</span></a>
+      <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Amirmohammad Mohammadi, home">Amirmohammad Mohammadi<span>Homepage</span></a>
       <nav aria-label="Main navigation">
         <ul>{% for link in site.data.navigation.main %}<li><a href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>{% endfor %}</ul>
       </nav>
     </div>
   </header>
   <main id="main" class="container" tabindex="-1">
-    {% unless page.home %}<header class="page-heading"><p class="eyebrow">{{ page.kicker | default: 'Research portfolio' }}</p><h1>{{ page.title }}</h1>{% if page.intro %}<p class="page-intro">{{ page.intro }}</p>{% endif %}</header>{% endunless %}
+    {% unless page.home %}<header class="page-heading"><p class="eyebrow">{{ page.kicker | default: 'Homepage' }}</p><h1>{{ page.title }}</h1>{% if page.intro %}<p class="page-intro">{{ page.intro }}</p>{% endif %}</header>{% endunless %}
     {{ content }}
   </main>
   <footer class="site-footer" id="contact">

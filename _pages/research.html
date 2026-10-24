@@ -21,14 +21,14 @@ description: Amir Mohammadi's work in vision-language models, digital pathology,
   <div class="project-heading"><p class="eyebrow">01 / Computer vision & digital health</p><h2 id="histology-title">Vision-language models for digital pathology.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
-      <p>I study how pretrained vision-language models can support whole-slide image classification with few labeled examples. The pipeline combines a computational pathology foundation model with attention-based multiple instance learning, visual adapters, and task-specific text adaptation.</p>
-      <p>For predicting drinking status from liver histology, the visual-adapter model increased mean balanced accuracy from 43.5% to 78.1% in the four-shot setting. Experiments used subject-disjoint training, validation, and test splits, with performance averaged over 30 runs.</p>
+      <p>I study few-shot whole-slide classification using a pretrained computational pathology vision-language model and attention-based multiple instance learning. The experiments compare visual adapters with textual task residuals.</p>
+      <p>For predicting ethanol drinking status from nonhuman primate liver histology, the eight-dimensional visual adapter achieved 78.1% mean balanced accuracy in the four-shot setting, compared with 43.5% for the ABMIL baseline. Evaluation used subject-disjoint splits and 30 experimental runs.</p>
       <p>Attention heatmaps connect slide-level predictions to image regions and support interpretation alongside pathologist review.</p>
       <ul class="resource-links"><li><a href="{{ '/publications/' | relative_url }}#histology">Manuscript details</a></li></ul>
     </div>
     <figure class="research-figure">
-      <img src="{{ '/assets/images/research/digital-pathology.svg' | relative_url }}" alt="Image patches and class prompts are encoded, adapted, and combined for whole-slide classification." width="900" height="440" loading="lazy">
-      <figcaption>Vision-language modeling with multiple instance learning and parameter-efficient adaptation.</figcaption>
+      <a href="{{ '/assets/images/research/method.png' | relative_url }}"><img src="{{ '/assets/images/research/method.png' | relative_url }}" alt="The supplied method figure shows tissue patches, frozen image and text encoders, multiple instance learning, a visual adapter, task residuals, and cosine-similarity prediction." width="2048" height="1146" loading="lazy"></a>
+      <figcaption>Whole-slide classification with frozen vision-language encoders and trainable adaptation modules. <a href="{{ '/assets/images/research/method.png' | relative_url }}">View full-size figure</a>.</figcaption>
     </figure>
   </div>
 </section>

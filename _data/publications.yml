@@ -158,7 +158,7 @@
   year: 2026
   status: Under review
   group: preprint
-  image: /assets/images/research/digital-pathology.svg
-  image_alt: Whole-slide image patches and text prompts pass through vision-language encoders and adaptation modules for slide-level classification.
+  image: /assets/images/research/method.png
+  image_alt: The supplied method figure shows image and text encoding, multiple instance learning, visual adaptation, task residuals, and slide-level prediction.
   summary: Vision-language foundation models and multiple instance learning for few-shot histopathology classification, with visual and textual adaptation.
   feature_title: Vision-language models for digital pathology

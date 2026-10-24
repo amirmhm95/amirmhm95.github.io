@@ -47,8 +47,6 @@ skills:
   items: Python, C, MATLAB, NumPy, pandas, Matplotlib
 - label: Machine learning frameworks
   items: PyTorch, Hugging Face Transformers, scikit-learn
-- label: Methods & tasks
-  items: Deep learning, computer vision, vision-language models, parameter-efficient fine-tuning (PEFT), transfer learning, few-shot learning, classification, semantic segmentation, object detection, physics-informed neural networks
 - label: Development tools
   items: VS Code, Git, Linux, Jupyter Notebook, high-performance computing
 - label: Research interests

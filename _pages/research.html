@@ -2,27 +2,14 @@
 layout: portfolio
 permalink: /research/
 title: Research
-kicker: Projects & contributions
-intro: Machine learning and computer vision for health, imaging, and sensing.
+hide_heading: true
 description: Amir Mohammadi's work in vision-language models, digital pathology, model evaluation, foundation-model adaptation, and physiological prediction.
 ---
-<div class="prose research-intro">
-  <p>I develop models and evaluation pipelines across images, physiological time series, and acoustic signals. My work includes foundation-model adaptation, multimodal learning, and physics-informed modeling.</p>
-</div>
-<nav class="section-nav" aria-label="Research topics">
-  <a href="#histology">Digital pathology</a>
-  <a href="#hpt">Model adaptation</a>
-  <a href="#pinn">Physiological modeling</a>
-  <a href="#stress">Biomedical sensing</a>
-  <a href="#emerging">Current projects</a>
-</nav>
-
 <section class="research-project" id="histology" aria-labelledby="histology-title">
   <div class="project-heading"><p class="eyebrow">01 / Computer vision & digital health</p><h2 id="histology-title">Vision-language models for digital pathology.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
-      <p>I study few-shot whole-slide classification using a pretrained computational pathology vision-language model and attention-based multiple instance learning. The experiments compare visual adapters with textual task residuals.</p>
-      <p>For predicting ethanol drinking status from nonhuman primate liver histology, the eight-dimensional visual adapter achieved 78.1% mean balanced accuracy in the four-shot setting, compared with 43.5% for the ABMIL baseline. Evaluation used subject-disjoint splits and 30 experimental runs.</p>
+      <p>I evaluate a pretrained computational pathology vision-language model for predicting ethanol drinking status from nonhuman primate liver whole-slide images with few labeled examples, comparing visual adapters and textual task residuals with attention-based multiple instance learning. In four-shot experiments, visual adaptation achieved 78.1% mean balanced accuracy versus 43.5% for the ABMIL baseline, using subject-disjoint evaluation over 30 runs.</p>
       <ul class="resource-links"><li><a href="{{ '/publications/' | relative_url }}#histology">Manuscript details</a></li></ul>
     </div>
     <figure class="research-figure">
@@ -36,8 +23,7 @@ description: Amir Mohammadi's work in vision-language models, digital pathology,
   <div class="project-heading"><p class="eyebrow">02 / Foundation-model adaptation</p><h2 id="hpt-title">Distribution-aware adaptation for classification.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
-      <p>I developed histogram-based parameter-efficient tuning to adapt pretrained Transformers to new classification tasks. A trainable histogram module captures feature distributions alongside frozen Transformer components.</p>
-      <p>In passive and active sonar classification experiments, I compared adaptation strategies through prediction accuracy, trainable parameters, and learned representations. On VTUAD, histogram-based tuning achieved 91.8% accuracy, compared with 89.8% for the conventional adapter baseline.</p>
+      <p>I developed and integrated a learnable histogram module into pretrained Transformers to capture target-domain feature distributions while keeping the backbone frozen. The method enables parameter-efficient adaptation for passive and active sonar classification, with comparisons of accuracy, trainable parameters, and feature representations. On VTUAD, it achieved 91.8% accuracy versus 89.8% for the conventional adapter baseline.</p>
       <ul class="resource-links"><li><a href="https://arxiv.org/abs/2504.15214">IGARSS 2026 paper</a></li><li><a href="https://github.com/Advanced-Vision-and-Learning-Lab/HLAST_DeepShip_ParameterEfficient">Code</a></li></ul>
     </div>
     <figure class="research-figure"><a href="{{ '/assets/images/preprint4.png' | relative_url }}"><img src="{{ '/assets/images/research/histogram-tuning.webp' | relative_url }}" alt="A trainable histogram module runs alongside frozen Transformer components." width="887" height="314" loading="lazy"></a><figcaption>Histogram-based tuning within a Transformer block. <a href="{{ '/assets/images/preprint4.png' | relative_url }}">View full-size figure</a>.</figcaption></figure>
@@ -48,8 +34,7 @@ description: Amir Mohammadi's work in vision-language models, digital pathology,
   <div class="project-heading"><p class="eyebrow">03 / Physiological time series</p><h2 id="pinn-title">Physics-informed models for physiological prediction.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
-      <p>I developed physics-informed neural-network models as part of a collaborative study of cuffless blood-pressure estimation. The approach combines supervised learning with physiological relationships expressed through Taylor approximations.</p>
-      <p>The published study reduced ground-truth training requirements by an average factor of 15 relative to the tested time-series baselines, while maintaining strong blood-pressure prediction performance.</p>
+      <p>I developed physics-informed neural networks for cuffless blood-pressure estimation from physiological time series. The approach incorporates physiological relationships expressed through Taylor approximations into supervised training. The collaborative study reported an average 15 times reduction in ground truth training labels compared with the tested time-series baselines.</p>
       <ul class="resource-links"><li><a href="https://www.nature.com/articles/s41746-023-00853-4">npj Digital Medicine, 2023</a></li><li><a href="https://www.nature.com/articles/s41746-023-00853-4.pdf">Paper PDF</a></li></ul>
     </div>
     <figure class="research-figure"><a href="{{ '/assets/images/paper1.png' | relative_url }}"><img src="{{ '/assets/images/research/physics-informed.webp' | relative_url }}" alt="A neural network combines physiological features with supervised and physics-based training objectives." width="1264" height="667" loading="lazy"></a><figcaption>Combining physiological relationships and measured data during training. <a href="{{ '/assets/images/paper1.png' | relative_url }}">View full-size figure</a>.</figcaption></figure>
@@ -60,8 +45,7 @@ description: Amir Mohammadi's work in vision-language models, digital pathology,
   <div class="project-heading"><p class="eyebrow">04 / Biomedical sensing</p><h2 id="stress-title">An integrated wearable for stress detection.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
-      <p>During my master’s research, I designed an ECG/EDA wearable system, developing its circuitry, Bluetooth Low Energy electronics, and supervised stress-detection algorithms.</p>
-      <p>The project achieved 94% classification accuracy in an 18-participant study and threefold battery life relative to the comparison devices.</p>
+      <p>During my master’s research, I designed an ECG/EDA wearable stress-detection system, from its circuitry and Bluetooth Low Energy electronics to supervised learning algorithms. The 18-participant study achieved 94% classification accuracy and threefold battery life relative to the comparison devices.</p>
       <ul class="resource-links"><li><a href="https://doi.org/10.1109/JSEN.2022.3157795">IEEE Sensors Journal, 2022</a></li></ul>
     </div>
     <figure class="research-figure"><a href="{{ '/assets/images/paper2.png' | relative_url }}"><img src="{{ '/assets/images/research/wearable-sensing.webp' | relative_url }}" alt="Wearable electronics including ECG and electrodermal sensing, power management, and a Bluetooth Low Energy microcontroller." width="831" height="669" loading="lazy"></a><figcaption>An integrated physiological sensing platform. <a href="{{ '/assets/images/paper2.png' | relative_url }}">View full-size figure</a>.</figcaption></figure>

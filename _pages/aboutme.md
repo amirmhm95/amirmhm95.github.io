@@ -3,7 +3,6 @@ layout: portfolio
 permalink: /aboutme/
 title: About
 kicker: Background & community
-intro: Research at the intersection of machine learning, computer vision, and digital health.
 description: Amir Mohammadi's education, research experience, mentoring, teaching, academic service, and awards.
 ---
 <div class="prose">

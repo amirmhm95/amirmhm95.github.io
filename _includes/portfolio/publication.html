@@ -14,6 +14,6 @@
     {% if include.featured %}<p>{{ pub.summary | escape }}</p>{% elsif pub.details %}<p class="publication__details">{{ pub.details }}</p>{% endif %}
     {% if include.featured %}
       {% if pub.links[0].url %}<ul class="resource-links" aria-label="Resources for {{ pub.title | escape }}"><li><a href="{{ pub.links[0].url }}">Paper<span class="sr-only">: {{ pub.title | escape }}</span></a></li></ul>{% endif %}
-    {% elsif pub.links %}<ul class="resource-links" aria-label="Resources for {{ pub.title | escape }}">{% for link in pub.links %}<li><a href="{{ link.url }}">{{ link.label }}<span class="sr-only">: {{ pub.title | escape }}</span></a></li>{% endfor %}</ul>{% endif %}
+    {% elsif pub.links %}<ul class="resource-links" aria-label="Resources for {{ pub.title | escape }}">{% for link in pub.links %}{% unless link.label == 'PDF' %}<li><a href="{{ link.url }}">{{ link.label }}<span class="sr-only">: {{ pub.title | escape }}</span></a></li>{% endunless %}{% endfor %}</ul>{% endif %}
   </div>
 </article>

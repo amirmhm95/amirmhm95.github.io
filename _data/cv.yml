@@ -2,7 +2,7 @@ education:
 - degree: PhD in Computer Engineering
   institution: Texas A&M University
   location: College Station, Texas
-  dates: September 2022 – present
+  dates: September 2022 – December 2026
   completion: Expected to graduate in December 2026
   thesis: Distribution-guided Parameter-efficient Fine-tuning of Foundation Models for Waveform-based Sensing
   milestone: PhD final examination passed in October 2026
@@ -19,7 +19,7 @@ education:
 experience:
 - role: Graduate Research Assistant
   institution: Texas A&M University
-  dates: September 2022 – present
+  dates: September 2022 – December 2026
   bullets:
   - Developed parameter-efficient fine-tuning (PEFT) methods for Transformer foundation models, adapting pretrained representations to new classification tasks through distribution-aware modules.
   - Built a few-shot histopathology classification pipeline combining vision-language models, attention-based multiple instance learning, and visual and textual adaptation.
@@ -43,7 +43,7 @@ experience:
   about_bullets:
   - Designed an ECG + EDA wearable sensor with a 3× longer battery life compared to alternatives and delivered 94% mental stress detection accuracy across 18 participants using machine learning models.
 skills:
-- label: Programming & scientific computing
+- label: Coding and computing
   items: Python, C, MATLAB, NumPy, pandas, Matplotlib
 - label: Machine learning frameworks
   items: PyTorch, Hugging Face Transformers, scikit-learn

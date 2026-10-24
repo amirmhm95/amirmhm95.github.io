@@ -28,6 +28,10 @@ if source != destination.resolve():
     shutil.copy2(source, destination)
 assert source.read_bytes() == original, "The source must remain unchanged."
 assert destination.read_bytes() == original, "The website copy must be byte-identical."
+legacy_destination = ROOT / "amirmmohammadi/documents/Amir_CV_2026.pdf"
+if legacy_destination.parent.exists():
+    shutil.copy2(destination, legacy_destination)
+    assert legacy_destination.read_bytes() == original
 cv_page = ROOT / "_pages/cv.html"
 content = re.sub(r'<span id="cv-pages">\d+ pages?</span>',
                  f'<span id="cv-pages">{page_count} {"page" if page_count == 1 else "pages"}</span>',

@@ -5,8 +5,8 @@ name: Amirmohammad Mohammadi
 title_separator: "·"
 description: "Amir Mohammadi is a Computer Engineering PhD candidate at Texas A&M University working across machine learning, computer vision, digital health, acoustics, and sensing."
 url: "https://amirmhm95.github.io"
-baseurl: "/amirmmohammadi"
-repository: amirmhm95/amirmmohammadi
+baseurl: ""
+repository: amirmhm95/amirmhm95.github.io
 timezone: America/Chicago
 updated: "2026-10-24"
 og_image: /assets/images/social-card.png
@@ -70,3 +70,7 @@ defaults:
     values:
       layout: portfolio
       last_modified_at: "2026-10-24"
+  - scope:
+      path: "amirmmohammadi"
+    values:
+      sitemap: false

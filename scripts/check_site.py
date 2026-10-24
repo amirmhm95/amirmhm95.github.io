@@ -24,6 +24,8 @@ class Page(HTMLParser):
         self.ids, self.links, self.canonicals = set(), [], []
         self.h1 = 0
         self.described = False
+        self.refresh = []
+        self.noindex = False
         self.feed(path.read_text())
 
     def handle_starttag(self, tag, attrs):
@@ -36,6 +38,10 @@ class Page(HTMLParser):
             self.h1 += 1
         if tag == "meta" and attrs.get("name") == "description":
             self.described = bool(attrs.get("content"))
+        if tag == "meta" and attrs.get("http-equiv") == "refresh":
+            self.refresh.append(attrs.get("content"))
+        if tag == "meta" and attrs.get("name") == "robots":
+            self.noindex = "noindex" in attrs.get("content", "")
         if tag == "link" and attrs.get("rel") == "canonical":
             self.canonicals.append(attrs.get("href", ""))
         if tag in ("a", "link", "img", "script", "source"):
@@ -102,6 +108,15 @@ assert (SITE / "documents/Amir_CV_2026.pdf").read_bytes() == (ROOT / "documents/
 sitemap = (SITE / "sitemap.xml").read_text()
 assert "amirmmohammadi.github.io" not in sitemap
 assert "/blog/" not in sitemap
+if base == "":
+    for route in ("", "aboutme/", "research/", "publications/", "cv/"):
+        legacy = pages[SITE / "amirmmohammadi" / route / "index.html"]
+        expected = origin + "/" + route
+        assert legacy.canonicals == [expected]
+        assert legacy.refresh == ["0;url=" + expected]
+        assert legacy.noindex
+    assert (SITE / "amirmmohammadi/documents/Amir_CV_2026.pdf").read_bytes() == (ROOT / "documents/Amir_CV_2026.pdf").read_bytes()
+    assert origin + "/amirmmohammadi/" not in sitemap
 print(f"Checked {len(pages)} HTML pages, all local links/resources/fragments, metadata, sitemap, and {len(pdf.pages)} PDF pages.")
 annotation_count = sum(len(p["/Annots"]) if "/Annots" in p else 0 for p in pdf.pages)
 print(f"Website includes all {len(publications)} publications/manuscripts; the author-supplied PDF has {annotation_count} link annotations.")

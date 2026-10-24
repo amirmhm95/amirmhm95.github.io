@@ -11,12 +11,14 @@
   <meta name="author" content="{{ profile.name }}">
   <meta name="theme-color" content="#faf9f6">
   {% if page.noindex %}<meta name="robots" content="noindex, follow">{% endif %}
-  <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+  {% assign canonical_path = page.redirect_to | default: page.url | replace: 'index.html', '' %}
+  <link rel="canonical" href="{{ canonical_path | absolute_url }}">
+  {% if page.redirect_to %}<meta http-equiv="refresh" content="0;url={{ page.redirect_to | absolute_url }}">{% endif %}
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="{{ page_title | strip | escape }}">
   <meta property="og:description" content="{{ description | escape }}">
-  <meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+  <meta property="og:url" content="{{ canonical_path | absolute_url }}">
   <meta property="og:site_name" content="{{ profile.name }}">
   <meta property="og:image" content="{{ site.og_image | absolute_url }}">
   <meta property="og:image:alt" content="Amir Mohammadi — machine learning, computer vision, and AI for health">

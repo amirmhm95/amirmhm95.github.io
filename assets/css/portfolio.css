@@ -580,13 +580,6 @@ h3 {
   height: auto
 }
 
-.research-figure__pdf {
-  display: block;
-  width: 100%;
-  aspect-ratio: 2160 / 1209;
-  border: 0
-}
-
 .research-figure figcaption {
   font-size: .77rem;
   color: var(--muted);

@@ -2,17 +2,77 @@
 layout: portfolio
 permalink: /research/
 title: Research
-kicker: Questions & contributions
-intro: How can we adapt powerful learning models when data, labels, and computation are limited?
-description: Research in parameter-efficient foundation-model adaptation, acoustic classification, physics-informed learning, and biomedical sensing by Amir Mohammadi.
+kicker: Projects & contributions
+intro: Machine learning and computer vision for health, imaging, and sensing.
+description: Amir Mohammadi's work in vision-language models, digital pathology, model evaluation, foundation-model adaptation, and physiological prediction.
 ---
-<div class="prose research-intro"><p>My research studies data- and parameter-efficient learning for sensing. I work across acoustic waveforms, physiological time series, and images, connecting model design to the constraints of the measurement process.</p></div>
-<nav class="section-nav" aria-label="Research topics"><a href="#hpt">Efficient adaptation</a><a href="#pinn">Physics-informed learning</a><a href="#stress">Wearable sensing</a><a href="#emerging">Current directions</a></nav>
+<div class="prose research-intro">
+  <p>I develop models and evaluation pipelines across images, physiological time series, and acoustic signals. My work includes foundation-model adaptation, multimodal learning, and physics-informed modeling.</p>
+</div>
+<nav class="section-nav" aria-label="Research topics">
+  <a href="#histology">Digital pathology</a>
+  <a href="#hpt">Model adaptation</a>
+  <a href="#pinn">Physiological modeling</a>
+  <a href="#stress">Biomedical sensing</a>
+  <a href="#emerging">Current projects</a>
+</nav>
 
-<section class="research-project" id="hpt" aria-labelledby="hpt-title"><div class="project-heading"><p class="eyebrow">01 / Foundation-model adaptation</p><h2 id="hpt-title">Adapting representations to a new sensing domain.</h2></div><div class="project-grid"><div class="project-copy"><h3>The question</h3><p>How can a pretrained Transformer capture a target domain’s statistics without updating every model parameter?</p><h3>My contribution</h3><p>I developed histogram-based parameter-efficient tuning for sonar classification. A trainable histogram module captures feature distributions alongside frozen Transformer components, providing a distribution-aware route to adaptation.</p><h3>Evidence & scope</h3><p>The work evaluates passive sonar recordings and active sonar imagery. On VTUAD, the reported accuracy is 91.8%, compared with 89.8% for the conventional adapter baseline. The evaluation also compares trainable parameters and feature representations. Results are specific to the evaluated datasets; the code supports inspection and further experiments.</p><ul class="resource-links"><li><a href="https://arxiv.org/abs/2504.15214">IGARSS 2026 accepted paper</a></li><li><a href="https://github.com/Advanced-Vision-and-Learning-Lab/HLAST_DeepShip_ParameterEfficient">Code</a></li></ul></div><figure class="research-figure"><a href="{{ '/assets/images/preprint4.png' | relative_url }}"><img src="{{ '/assets/images/research/histogram-tuning.webp' | relative_url }}" alt="A trainable histogram module runs alongside frozen layer normalization and multi-head self-attention components." width="887" height="314" loading="lazy"></a><figcaption>Histogram-based tuning within a Transformer block. <a href="{{ '/assets/images/preprint4.png' | relative_url }}">View full-size figure</a>.</figcaption></figure></div></section>
+<section class="research-project" id="histology" aria-labelledby="histology-title">
+  <div class="project-heading"><p class="eyebrow">01 / Computer vision & digital health</p><h2 id="histology-title">Vision-language models for digital pathology.</h2></div>
+  <div class="project-grid">
+    <div class="project-copy">
+      <p>I study how pretrained vision-language models can support whole-slide image classification with few labeled examples. The pipeline combines a computational pathology foundation model with attention-based multiple instance learning, visual adapters, and task-specific text adaptation.</p>
+      <p>For predicting drinking status from liver histology, the visual-adapter model increased mean balanced accuracy from 43.5% to 78.1% in the four-shot setting. Experiments used subject-disjoint training, validation, and test splits, with performance averaged over 30 runs.</p>
+      <p>Attention heatmaps connect slide-level predictions to image regions and support interpretation alongside pathologist review.</p>
+      <ul class="resource-links"><li><a href="{{ '/publications/' | relative_url }}#histology">Manuscript details</a></li></ul>
+    </div>
+    <figure class="research-figure">
+      <img src="{{ '/assets/images/research/digital-pathology.svg' | relative_url }}" alt="Image patches and class prompts are encoded, adapted, and combined for whole-slide classification." width="900" height="440" loading="lazy">
+      <figcaption>Vision-language modeling with multiple instance learning and parameter-efficient adaptation.</figcaption>
+    </figure>
+  </div>
+</section>
 
-<section class="research-project" id="pinn" aria-labelledby="pinn-title"><div class="project-heading"><p class="eyebrow">02 / Physiological time series</p><h2 id="pinn-title">Using physiology when labels are expensive.</h2></div><div class="project-grid"><div class="project-copy"><h3>The question</h3><p>Can physiological relationships help estimate blood pressure when collecting personalized ground-truth labels is burdensome?</p><h3>My contribution</h3><p>I developed physics-informed neural-network models as part of a collaborative study of cuffless blood-pressure estimation. The approach combines supervised learning with physiological constraints derived through Taylor approximations.</p><h3>Evidence & scope</h3><p>The published study reports an average fifteenfold reduction in ground-truth training data relative to the tested time-series baselines, while retaining strong prediction performance on its evaluated bioimpedance datasets. This is a research evaluation, with performance tied to those datasets and protocols.</p><ul class="resource-links"><li><a href="https://www.nature.com/articles/s41746-023-00853-4">npj Digital Medicine, 2023</a></li><li><a href="https://www.nature.com/articles/s41746-023-00853-4.pdf">Paper PDF</a></li></ul></div><figure class="research-figure"><a href="{{ '/assets/images/paper1.png' | relative_url }}"><img src="{{ '/assets/images/research/physics-informed.webp' | relative_url }}" alt="Bioimpedance and physiological features enter a neural network trained using both supervised and physics-based loss functions." width="1264" height="667" loading="lazy"></a><figcaption>Combining physiological structure and measured data during training. <a href="{{ '/assets/images/paper1.png' | relative_url }}">View full-size figure</a>.</figcaption></figure></div></section>
+<section class="research-project" id="hpt" aria-labelledby="hpt-title">
+  <div class="project-heading"><p class="eyebrow">02 / Foundation-model adaptation</p><h2 id="hpt-title">Distribution-aware adaptation for classification.</h2></div>
+  <div class="project-grid">
+    <div class="project-copy">
+      <p>I developed histogram-based parameter-efficient tuning to adapt pretrained Transformers to new classification tasks. A trainable histogram module captures feature distributions alongside frozen Transformer components.</p>
+      <p>In passive and active sonar classification experiments, I compared adaptation strategies through prediction accuracy, trainable parameters, and learned representations. On VTUAD, histogram-based tuning achieved 91.8% accuracy, compared with 89.8% for the conventional adapter baseline.</p>
+      <ul class="resource-links"><li><a href="https://arxiv.org/abs/2504.15214">IGARSS 2026 accepted paper</a></li><li><a href="https://github.com/Advanced-Vision-and-Learning-Lab/HLAST_DeepShip_ParameterEfficient">Code</a></li></ul>
+    </div>
+    <figure class="research-figure"><a href="{{ '/assets/images/preprint4.png' | relative_url }}"><img src="{{ '/assets/images/research/histogram-tuning.webp' | relative_url }}" alt="A trainable histogram module runs alongside frozen Transformer components." width="887" height="314" loading="lazy"></a><figcaption>Histogram-based tuning within a Transformer block. <a href="{{ '/assets/images/preprint4.png' | relative_url }}">View full-size figure</a>.</figcaption></figure>
+  </div>
+</section>
 
-<section class="research-project" id="stress" aria-labelledby="stress-title"><div class="project-heading"><p class="eyebrow">03 / Integrated sensing</p><h2 id="stress-title">Connecting electronics, signals, and inference.</h2></div><div class="project-grid"><div class="project-copy"><h3>The question</h3><p>How can a wearable integrate physiological measurements and learning algorithms while operating within a limited power budget?</p><h3>My contribution</h3><p>During my master’s research, I designed an ECG/EDA wearable system from the circuitry and Bluetooth Low Energy electronics through to supervised stress-detection algorithms.</p><h3>Evidence & scope</h3><p>The project achieved 94% stress-detection accuracy in an 18-participant study and threefold battery life relative to the evaluated alternatives. Those findings reflect the study’s experimental conditions and comparison devices.</p><ul class="resource-links"><li><a href="https://doi.org/10.1109/JSEN.2022.3157795">IEEE Sensors Journal, 2022</a></li></ul></div><figure class="research-figure"><a href="{{ '/assets/images/paper2.png' | relative_url }}"><img src="{{ '/assets/images/research/wearable-sensing.webp' | relative_url }}" alt="Wearable sensor architecture including ECG sensing, EDA electrodes, power management, and a Bluetooth Low Energy microcontroller." width="831" height="669" loading="lazy"></a><figcaption>An integrated physiological sensing platform. <a href="{{ '/assets/images/paper2.png' | relative_url }}">View full-size figure</a>.</figcaption></figure></div></section>
+<section class="research-project" id="pinn" aria-labelledby="pinn-title">
+  <div class="project-heading"><p class="eyebrow">03 / Physiological time series</p><h2 id="pinn-title">Physics-informed models for physiological prediction.</h2></div>
+  <div class="project-grid">
+    <div class="project-copy">
+      <p>I developed physics-informed neural-network models as part of a collaborative study of cuffless blood-pressure estimation. The approach combines supervised learning with physiological relationships expressed through Taylor approximations.</p>
+      <p>The published study reduced ground-truth training requirements by an average factor of 15 relative to the tested time-series baselines, while maintaining strong blood-pressure prediction performance.</p>
+      <ul class="resource-links"><li><a href="https://www.nature.com/articles/s41746-023-00853-4">npj Digital Medicine, 2023</a></li><li><a href="https://www.nature.com/articles/s41746-023-00853-4.pdf">Paper PDF</a></li></ul>
+    </div>
+    <figure class="research-figure"><a href="{{ '/assets/images/paper1.png' | relative_url }}"><img src="{{ '/assets/images/research/physics-informed.webp' | relative_url }}" alt="A neural network combines physiological features with supervised and physics-based training objectives." width="1264" height="667" loading="lazy"></a><figcaption>Combining physiological relationships and measured data during training. <a href="{{ '/assets/images/paper1.png' | relative_url }}">View full-size figure</a>.</figcaption></figure>
+  </div>
+</section>
 
-<section class="section" id="emerging" aria-labelledby="emerging-title"><p class="eyebrow">Current directions</p><h2 id="emerging-title">Multiple representations. Limited data.</h2><div class="two-column"><article class="prose"><h3>Waveform–spectrogram fusion</h3><p>My dual-encoder work combines waveform and spectrogram representations through differentiable Choquet-integral fusion. It studies complementary representations while limiting the trainable parameter space.</p><a href="https://arxiv.org/abs/2606.02341">Read the preprint <span aria-hidden="true">↗</span></a></article><article class="prose"><h3>Few-shot digital pathology</h3><p>I built a whole-slide image classification pipeline to investigate parameter-efficient vision-language modeling for predicting ethanol drinking status from nonhuman primate liver histology. This proof-of-concept manuscript is under review.</p><a href="{{ '/publications/' | relative_url }}#histology">Manuscript details <span aria-hidden="true">→</span></a></article></div></section>
+<section class="research-project" id="stress" aria-labelledby="stress-title">
+  <div class="project-heading"><p class="eyebrow">04 / Biomedical sensing</p><h2 id="stress-title">An integrated wearable for stress detection.</h2></div>
+  <div class="project-grid">
+    <div class="project-copy">
+      <p>During my master’s research, I designed an ECG/EDA wearable system, developing its circuitry, Bluetooth Low Energy electronics, and supervised stress-detection algorithms.</p>
+      <p>The project achieved 94% classification accuracy in an 18-participant study and threefold battery life relative to the comparison devices.</p>
+      <ul class="resource-links"><li><a href="https://doi.org/10.1109/JSEN.2022.3157795">IEEE Sensors Journal, 2022</a></li></ul>
+    </div>
+    <figure class="research-figure"><a href="{{ '/assets/images/paper2.png' | relative_url }}"><img src="{{ '/assets/images/research/wearable-sensing.webp' | relative_url }}" alt="Wearable electronics including ECG and electrodermal sensing, power management, and a Bluetooth Low Energy microcontroller." width="831" height="669" loading="lazy"></a><figcaption>An integrated physiological sensing platform. <a href="{{ '/assets/images/paper2.png' | relative_url }}">View full-size figure</a>.</figcaption></figure>
+  </div>
+</section>
+
+<section class="section" id="emerging" aria-labelledby="emerging-title">
+  <p class="eyebrow">Current projects</p><h2 id="emerging-title">Computer vision evaluation & multimodal learning.</h2>
+  <div class="two-column">
+    <article class="prose" id="vision-evaluation"><h3>Computer vision evaluation</h3><p>I contribute to a modular evaluation pipeline for image classification, semantic segmentation, and object detection, using shared protocols to compare pretrained models and adaptation strategies.</p></article>
+    <article class="prose"><h3>Multimodal acoustic classification</h3><p>My dual-encoder work combines waveform and spectrogram representations through differentiable Choquet-integral fusion, learning how to combine complementary information for classification.</p><a href="https://arxiv.org/abs/2606.02341">Read the preprint <span aria-hidden="true">↗</span></a></article>
+  </div>
+</section>

@@ -55,7 +55,7 @@ try:
                 assert response.status == 200, (route, response.status)
                 assert page.locator("h1").count() == 1
                 assert page.locator("nav[aria-label='Main navigation'] a").count() == 5
-                if route != "/404.html":
+                if route not in ("/404.html", "/cv/"):
                     assert page.locator("[aria-current='page']").count() == 1
                 # Exercise below-the-fold content before judging image loading or captures.
                 for image in page.locator("img").all():
@@ -69,6 +69,8 @@ try:
                 })""")
                 assert layout["content"] <= layout["width"] + 1, (route, width, "horizontal overflow", layout)
                 assert not layout["badImages"], (route, layout["badImages"])
+                assert page.locator("a[download]").count() == 0
+                assert page.locator("nav[aria-label='Main navigation'] a").last.get_attribute("href") == BASE + "/documents/Amir_CV_2026.pdf"
                 results.append({"route": route, "width": width, "layout": "pass"})
                 if width in (375, 1440):
                     if route in ("/", "/research/", "/publications/", "/cv/"):

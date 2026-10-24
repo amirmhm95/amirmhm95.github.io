@@ -1,56 +1,59 @@
 education:
-  - degree: PhD in Computer Engineering
-    institution: Texas A&M University
-    location: College Station, Texas
-    dates: September 2022 – present
-    completion: Expected December 2026
-    thesis: Distribution-guided Parameter-efficient Fine-tuning of Foundation Models for Waveform-based Sensing
-  - degree: MS in Electrical Engineering
-    institution: Sharif University of Technology
-    location: Tehran, Iran
-    dates: September 2018 – February 2021
-    thesis: Design and Evaluation of an Integrated Biomedical System for Human Stress Detection and Monitoring
-  - degree: BS in Electrical Engineering
-    institution: University of Tabriz
-    location: Tabriz, Iran
-    dates: September 2014 – September 2018
-    thesis: Development of a Data Logger for Sensors of Android Smartphones with Python
+- degree: PhD in Computer Engineering
+  institution: Texas A&M University
+  location: College Station, Texas
+  dates: September 2022 – present
+  completion: Expected to graduate in December 2026
+  thesis: Distribution-guided Parameter-efficient Fine-tuning of Foundation Models for Waveform-based Sensing
+  milestone: PhD final examination passed in October 2026
+- degree: MS in Electrical Engineering
+  institution: Sharif University of Technology
+  location: Tehran, Iran
+  dates: September 2018 – February 2021
+  thesis: Design and Evaluation of an Integrated Biomedical System for Human Stress Detection and Monitoring
+- degree: BS in Electrical Engineering
+  institution: University of Tabriz
+  location: Tabriz, Iran
+  dates: September 2014 – September 2018
+  thesis: Development of a Data Logger for Sensors of Android Smartphones with Python
 experience:
-  - role: Graduate Research Assistant
-    institution: Texas A&M University
-    dates: September 2022 – present
-    bullets:
-      - Developed distribution-aware, parameter-efficient adaptation methods for Transformer foundation models in waveform-based sensing.
-      - Built a few-shot whole-slide image classification pipeline to study parameter-efficient adaptation of vision-language models for liver histology.
-      - Designed time-frequency feature combinations for histogram-layer neural networks in acoustic classification.
-      - Established a cross-domain transfer benchmark in which ImageNet-pretrained models outperformed audio-pretrained models by 3 percentage points on the evaluated acoustic classification task.
-      - Developed physics-informed models for cuffless blood-pressure estimation; the collaborative study reduced ground-truth training data requirements by an average factor of 15 on its evaluated datasets.
-      - Communicated research through publications, presentations, and reports to funding agencies.
-  - role: Graduate Student Researcher
-    institution: Sharif University of Technology
-    dates: July 2019 – February 2021
-    bullets:
-      - Designed an integrated ECG/EDA wearable sensor, from circuitry and Bluetooth Low Energy electronics to machine-learning algorithms.
-      - Achieved 94% stress-detection accuracy in an 18-participant study and threefold battery life relative to the evaluated alternatives.
+- role: Graduate Research Assistant
+  institution: Texas A&M University
+  dates: September 2022 – present
+  bullets:
+  - Developed parameter-efficient fine-tuning (PEFT) methods for Transformer foundation models, adapting pretrained representations to new classification tasks through distribution-aware modules.
+  - Built a few-shot histopathology classification pipeline combining vision-language models, attention-based multiple instance learning, and visual and textual adaptation.
+  - Improved mean balanced accuracy from 43.5% to 78.1% in a four-shot whole-slide classification study using subject-disjoint splits and repeated evaluation.
+  - Contributed to a modular evaluation pipeline for image classification, semantic segmentation, and object detection, comparing pretrained computer vision models and adaptation strategies.
+  - Developed physics-informed neural networks for physiological time-series prediction; the collaborative blood-pressure study reduced ground-truth training requirements by an average factor of 15.
+  - Benchmarked cross-domain transfer learning, finding a 3-percentage-point classification accuracy improvement from image-pretrained models over audio-pretrained models.
+- role: Graduate Student Researcher
+  institution: Sharif University of Technology
+  dates: July 2019 – February 2021
+  bullets:
+  - Designed an integrated ECG/EDA wearable sensor, from circuitry and Bluetooth Low Energy electronics to machine-learning algorithms.
+  - Achieved 94% stress-detection accuracy in an 18-participant study and threefold battery life relative to the evaluated alternatives.
 skills:
-  - label: Machine learning
-    items: PyTorch, Hugging Face Transformers, scikit-learn, foundation-model adaptation, physics-informed learning, multimodal learning
-  - label: Scientific computing
-    items: Python, NumPy, pandas, Matplotlib, MATLAB, C
-  - label: Research engineering
-    items: Git, Linux, Jupyter, high-performance computing, waveform and time-frequency analysis, wearable sensing
-support: "Doctoral research assistantship support from MIT Lincoln Laboratory, the National Institutes of Health, and the Texas A&M Department of Electrical & Computer Engineering."
+- label: Programming & scientific computing
+  items: Python, C, MATLAB, NumPy, pandas, Matplotlib
+- label: Machine learning frameworks
+  items: PyTorch, Hugging Face Transformers, scikit-learn
+- label: Methods & tasks
+  items: Deep learning, computer vision, vision-language models, parameter-efficient fine-tuning (PEFT), transfer learning, few-shot learning, classification, semantic segmentation, object detection, physics-informed neural networks
+- label: Development tools
+  items: Git, Linux, Jupyter Notebook, high-performance computing
+support: Fully funded doctoral research assistantship support from MIT Lincoln Laboratory, the National Institutes of Health, and the Texas A&M Department of Electrical & Computer Engineering.
 awards:
-  - title: IEEE Geoscience and Remote Sensing Society travel grant
-    date: May 2026
-  - title: Texas A&M Electrical & Computer Engineering conference travel grant
-    date: May 2026
+- title: IEEE Geoscience and Remote Sensing Society travel grant
+  date: May 2026
+- title: Texas A&M Electrical & Computer Engineering conference travel grant
+  date: May 2026
 service:
-  - Reviewer, IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP).
-  - Reviewer, Expert Systems with Applications.
-  - Session chair, IEEE International Geoscience and Remote Sensing Symposium (IGARSS).
+- Reviewer, IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP).
+- Reviewer, Expert Systems with Applications.
+- Session chair, IEEE International Geoscience and Remote Sensing Symposium (IGARSS).
 mentoring:
-  - Mentored undergraduate and graduate students on end-to-end AI projects.
-  - Delivered guest lectures in Machine Learning for Electrical Engineering at Texas A&M University.
-  - Showcased AI projects at Night at the Zach during the Texas Science & Engineering Fair.
+- Mentored undergraduate and graduate students on end-to-end AI projects.
+- Delivered guest lectures in Machine Learning for Electrical Engineering at Texas A&M University.
+- Showcased AI projects at Night at the Zach during the Texas Science & Engineering Fair.
 languages: English (proficient), Farsi (native/bilingual), Azerbaijani Turkish (native/bilingual)

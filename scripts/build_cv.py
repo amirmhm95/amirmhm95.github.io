@@ -90,22 +90,31 @@ def page_footer(canvas, doc):
     canvas.restoreState()
 
 
+class CVDocument(SimpleDocTemplate):
+    def afterPage(self):
+        # Draw after the body so text extractors encounter content before the footer.
+        page_footer(self.canv, self)
+
+
 story = [para(text(profile["display_name"]), "name")]
-story.append(para("Computer Engineering PhD candidate · Texas A&amp;M University"))
-story.append(para("College Station, Texas · U.S. Permanent Resident", "small"))
-story.append(para(" · ".join([
-    link("mailto:" + profile["personal_email"], profile["personal_email"]),
-    link(profile["website"], "Website"), link(profile["scholar"], "Google Scholar"),
+story.append(para("Computer Engineering PhD candidate | Texas A&amp;M University"))
+story.append(para("College Station, Texas | U.S. Permanent Resident", "small"))
+story.append(para(" | ".join([
+    link("mailto:" + profile["email"], profile["email"]),
+    link(profile["website"], profile["website"].replace("https://", "").rstrip("/")),
+    link(profile["scholar"], "Google Scholar"),
     link(profile["linkedin"], "LinkedIn"),
 ]), "small"))
 story.append(HRFlowable(width="100%", thickness=1, color=ACCENT, spaceBefore=4, spaceAfter=7))
-story.append(para("<b>Research focus:</b> " + text(profile["focus"])))
+story.append(para("<b>Research interests:</b> " + text(profile["focus"])))
 story.append(section("Education"))
 for item in cv["education"]:
     entry = [para(f'{text(item["degree"])} · {text(item["institution"])}', "entry")]
     dates = item["dates"] + (" · " + item["completion"] if item.get("completion") else "")
     entry.append(para(text(dates), "small"))
-    if not item["degree"].startswith("BS"):
+    if item.get("milestone"):
+        entry.append(para(text(item["milestone"]), "small"))
+    if item["degree"].startswith("PhD"):
         entry.append(para(f'<i>Thesis:</i> {text(item["thesis"])}', "small"))
     story.append(KeepTogether(entry))
 
@@ -119,11 +128,13 @@ for item in cv["experience"]:
 
 story.append(section("Technical skills"))
 for item in cv["skills"]:
+    # Methods are demonstrated in the experience bullets; keep the PDF skills list compact.
+    if item["label"] == "Methods & tasks":
+        continue
     story.append(para(f'<b>{text(item["label"])}:</b> {text(item["items"])}', "small"))
-story.append(para("<b>Research support:</b> " + text(cv["support"]), "small"))
 
 story.append(PageBreak())
-story.append(para("Publications & research contributions", "name"))
+story.append(para("Publications", "name"))
 for group, title in [("peer_reviewed", "Peer-reviewed & accepted publications"),
                      ("preprint", "Manuscripts under review")]:
     story.append(section(title))
@@ -146,18 +157,18 @@ for group, title in [("peer_reviewed", "Peer-reviewed & accepted publications"),
 story.append(section("Academic service, teaching & mentoring"))
 story.append(para(" ".join(text(item) for item in cv["service"]), "small"))
 story.append(para(" ".join(text(item) for item in cv["mentoring"]), "small"))
-story.append(section("Awards"))
+story.append(section("Awards & recognition"))
 for award in cv["awards"]:
     story.append(para(text(award["title"] + " · " + award["date"]), "small"))
-story.append(para("<b>Languages:</b> " + text(cv["languages"]), "small"))
+story.append(para(text(cv["support"]), "small"))
 
 output = ROOT / "documents" / "Amir_CV_2026.pdf"
-doc = SimpleDocTemplate(str(output), pagesize=letter, rightMargin=43, leftMargin=43,
+doc = CVDocument(str(output), pagesize=letter, rightMargin=43, leftMargin=43,
                         topMargin=38, bottomMargin=49,
                         title=profile["display_name"] + " — Research CV",
                         author=profile["name"], subject=profile["focus"],
                         pageCompression=1)
-doc.build(story, onFirstPage=page_footer, onLaterPages=page_footer)
+doc.build(story)
 from pypdf import PdfReader
 reader = PdfReader(str(output))
 page_count = len(reader.pages)

@@ -93,7 +93,10 @@ for pub in publications:
         errors.append(f"Publication missing from PDF: {pub['id']}")
 assert len(pdf.pages) == 2, "Review the CV if pagination changes."
 assert all(page.extract_text().strip() for page in pdf.pages), "PDF contains an empty/image-only page."
-assert "Expected December 2026" in pdf_text
+assert "Expected to graduate in December 2026" in pdf_text
+assert "PhD final examination passed in October 2026" in pdf_text
+assert "amir.mhm.ee@gmail.com" in pdf_text
+assert pdf.pages[0].extract_text().lstrip().startswith("Amirmohammad (Amir) Mohammadi"), "PDF reading order should start with the name."
 assert "U.S. Permanent Resident" in pdf_text
 assert not (SITE / "blog").exists(), "Empty blog must not be published."
 assert not (SITE / "scripts").exists(), "Build tools must not be published."

@@ -8,7 +8,7 @@ A static Jekyll site with a custom, accessible portfolio layout. The active page
 
 | Content | Source |
 | --- | --- |
-| Name, contact links, research focus, PDF URL | `_data/profile.yml` |
+| Name, contact links, research summary, PDF URL, featured publications | `_data/profile.yml` |
 | Education, experience, skills, service, awards | `_data/cv.yml` |
 | Publications, author order, status, resource links | `_data/publications.yml` |
 | Homepage | `index.html` |
@@ -20,9 +20,9 @@ A static Jekyll site with a custom, accessible portfolio layout. The active page
 | Site address, update date, indexing | `_config.yml` |
 | Public PDF | `documents/Amir_CV_2026.pdf` |
 
-Use `relative_url` for internal links and `absolute_url` for canonical/social URLs. Keep `url: https://amirmhm95.github.io` and `baseurl: /amirmmohammadi` together unless the hosting address changes. Existing `/aboutme/` and PDF addresses are preserved. The unused blog is excluded from the build and sitemap.
+Use `relative_url` for internal links and `absolute_url` for canonical/social URLs. Keep `url: https://amirmhm95.github.io` and `baseurl: /amirmmohammadi` together unless the hosting address changes. Existing `/aboutme/` and PDF addresses are preserved. The CV navigation item opens the PDF directly; `/cv/` remains an accessible HTML overview. PDF links do not use a download attribute. The unused blog is excluded from the build and sitemap.
 
-Publication author order and review status must be checked before updates. `_data/publications.yml` also feeds the PDF generator. If research or career data changes, regenerate the PDF and update the prose where relevant. Keep `updated` and `last_modified_at` in `_config.yml` current.
+Publication author order and review status must be checked before updates. `_data/publications.yml` also feeds the PDF generator. If research or career data changes, regenerate the PDF and update the prose where relevant. Keep `updated` and `last_modified_at` in `_config.yml` current. The website uses Gmail for all contact links. The final examination and expected graduation date are recorded separately; the degree is not presented as conferred.
 
 ## Preview and build
 
@@ -60,7 +60,7 @@ In this prepared working copy:
 PYTHONPATH="$PWD/.tools/python" PYTHONDONTWRITEBYTECODE=1 python3 scripts/build_cv.py
 ```
 
-This replaces `documents/Amir_CV_2026.pdf` and updates its page count in `_pages/cv.html`. It embeds fonts and selectable text, preserves author order, and adds clickable paper/profile links. Review pagination after substantive changes; the current CV has two pages. Build the site again afterward.
+This replaces `documents/Amir_CV_2026.pdf` and updates its page count in `_pages/cv.html`. It embeds fonts and selectable text, preserves author order, and adds clickable paper/profile links. It uses a single-column layout and standard section headings. Footers are drawn after the page body to preserve text-extraction order. Methods and task keywords appear in accomplishment bullets; the PDF skills section lists programming languages, libraries, and development tools. Review pagination after substantive changes; the current CV has two pages. Build the site again afterward.
 
 ## Verify changes
 
@@ -79,7 +79,7 @@ PYTHONPATH="$PWD/.tools/python" PYTHONDONTWRITEBYTECODE=1 python3 scripts/check_
 PYTHONPATH="$PWD/.tools/python" PYTHONDONTWRITEBYTECODE=1 PLAYWRIGHT_BROWSERS_PATH="$PWD/.tools/browsers" TMPDIR="$PWD/.tools/tmp" python3 scripts/check_browser.py
 ```
 
-The static check validates local links, images, fragments, canonical URLs, sitemap exclusions, and PDF coverage. Browser checks cover six screen widths (320–1440px), 200% text enlargement, keyboard navigation, visible focus, reduced-motion configuration, print behavior, and image loading. The 320px layout also tests reflow equivalent to a 1280px browser viewport at 400% zoom. Screenshots and results are saved only in `.tools/review/`.
+The static check validates local links, images, fragments, canonical URLs, sitemap exclusions, PDF coverage, career milestones, and the PDF’s initial reading order. Browser checks cover six screen widths (320–1440px), 200% text enlargement, keyboard navigation, visible focus, reduced-motion configuration, print behavior, and image loading. The 320px layout also tests reflow equivalent to a 1280px browser viewport at 400% zoom. Screenshots and results are saved only in `.tools/review/`.
 
 When `.tools/axe.min.js` exists, the browser script also runs axe WCAG A/AA checks. These automated checks complement manual review; they do not replace assistive-technology testing. External publishers may block automated requests even when a link works in a regular browser.
 

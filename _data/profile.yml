@@ -5,14 +5,18 @@ role: Computer Engineering PhD candidate
 institution: Texas A&M University
 department: Electrical & Computer Engineering
 location: College Station, Texas
-email: amir.m@tamu.edu
-personal_email: amir.mhm.ee@gmail.com
+email: amir.mhm.ee@gmail.com
 scholar: https://scholar.google.com/citations?user=tTC4uV8AAAAJ&hl=en
 linkedin: https://www.linkedin.com/in/amirmohammad-mohammadi/
 github: https://github.com/amirmhm95
 orcid: https://orcid.org/0000-0002-7558-1706
 website: https://amirmhm95.github.io/amirmmohammadi/
 cv: /documents/Amir_CV_2026.pdf
-graduation: Expected December 2026
-focus: Data- and parameter-efficient learning for real-world sensing.
-summary: "I develop learning methods for sensing problems where labels are limited, signals are noisy, and adapting a large model must be practical. My work connects foundation-model adaptation, acoustic classification, and physics-informed physiological modeling, with emerging applications in digital pathology."
+graduation: Expected to graduate in December 2026.
+focus: Machine learning, deep learning, computer vision, and AI for health; foundation models, multimodal learning, and physiological modeling.
+summary: I develop methods that help AI models adapt to new settings with stronger performance and lower computational costs. My work spans parameter-efficient fine-tuning, physics-informed modeling, and model evaluation, including settings with limited labeled data and noisy signals. I apply these approaches to digital health, computer vision, acoustics, and sensing.
+exam: Passed the PhD final examination in October 2026.
+featured_publications:
+- histology
+- hpt
+- pinn

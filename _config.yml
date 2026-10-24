@@ -3,7 +3,7 @@ locale: en-US
 title: Amirmohammad Mohammadi
 name: Amirmohammad Mohammadi
 title_separator: "·"
-description: "Amir Mohammadi is a Computer Engineering PhD candidate at Texas A&M University working on data- and parameter-efficient learning for real-world sensing."
+description: "Amir Mohammadi is a Computer Engineering PhD candidate at Texas A&M University working across machine learning, computer vision, digital health, acoustics, and sensing."
 url: "https://amirmhm95.github.io"
 baseurl: "/amirmmohammadi"
 repository: amirmhm95/amirmmohammadi
@@ -15,7 +15,7 @@ author:
   name: Amirmohammad Mohammadi
   avatar: /assets/images/portrait.webp
   bio: Computer Engineering PhD candidate at Texas A&M University.
-  email: amir.m@tamu.edu
+  email: amir.mhm.ee@gmail.com
 social:
   type: Person
   name: Amirmohammad Mohammadi

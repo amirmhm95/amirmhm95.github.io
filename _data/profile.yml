@@ -1,0 +1,18 @@
+name: Amirmohammad Mohammadi
+display_name: Amirmohammad (Amir) Mohammadi
+short_name: Amir Mohammadi
+role: Computer Engineering PhD candidate
+institution: Texas A&M University
+department: Electrical & Computer Engineering
+location: College Station, Texas
+email: amir.m@tamu.edu
+personal_email: amir.mhm.ee@gmail.com
+scholar: https://scholar.google.com/citations?user=tTC4uV8AAAAJ&hl=en
+linkedin: https://www.linkedin.com/in/amirmohammad-mohammadi/
+github: https://github.com/amirmhm95
+orcid: https://orcid.org/0000-0002-7558-1706
+website: https://amirmhm95.github.io/amirmmohammadi/
+cv: /documents/Amir_CV_2026.pdf
+graduation: Expected December 2026
+focus: Data- and parameter-efficient learning for real-world sensing.
+summary: "I develop learning methods for sensing problems where labels are limited, signals are noisy, and adapting a large model must be practical. My work connects foundation-model adaptation, acoustic classification, and physics-informed physiological modeling, with emerging applications in digital pathology."

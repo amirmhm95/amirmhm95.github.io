@@ -1,0 +1,6 @@
+# Only needed for PDF regeneration and local verification, not website hosting.
+reportlab==4.4.0
+pypdf==6.21.2
+PyYAML==6.0.3
+Pillow==11.3.0
+playwright==1.60.0

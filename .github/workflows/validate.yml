@@ -1,0 +1,35 @@
+name: Validate portfolio
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Install verification tools
+        run: python -m pip install -r requirements-dev.txt
+      - name: Build and check content
+        run: |
+          bundle exec jekyll build
+          python scripts/check_site.py
+      - name: Check browser layouts and navigation
+        run: |
+          mkdir -p .tools
+          curl --fail --silent --show-error --location https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.10.3/axe.min.js --output .tools/axe.min.js
+          python -m playwright install --with-deps chromium
+          python scripts/check_browser.py

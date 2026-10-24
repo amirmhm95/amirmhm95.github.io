@@ -1,0 +1,12 @@
+---
+layout: portfolio
+permalink: /publications/
+title: Publications
+kicker: Papers & resources
+intro: Research in efficient adaptation, acoustic classification, and physiological sensing.
+description: Publications and manuscripts by Amir Mohammadi, with paper, preprint, PDF, and code links.
+---
+<div class="page-tools"><p>My name is emphasized in each author list. Accepted work and manuscripts under review are labeled separately.</p><a class="text-link" href="{{ site.data.profile.scholar }}">Google Scholar <span aria-hidden="true">↗</span></a></div>
+<section class="section publication-section" aria-labelledby="reviewed-title"><h2 id="reviewed-title">Peer-reviewed & accepted</h2><div class="publication-list">{% assign reviewed = site.data.publications | where: 'group', 'peer_reviewed' %}{% for publication in reviewed %}{% include portfolio/publication.html publication=publication %}{% endfor %}</div></section>
+<section class="section publication-section" aria-labelledby="manuscripts-title"><h2 id="manuscripts-title">Manuscripts under review</h2><p class="section-note">These manuscripts are separate from the peer-reviewed record. Public preprints are linked where available.</p><div class="publication-list">{% assign manuscripts = site.data.publications | where: 'group', 'preprint' %}{% for publication in manuscripts %}{% include portfolio/publication.html publication=publication %}{% endfor %}</div></section>
+<p class="small-note">Last reviewed {{ site.updated | date: '%B %-d, %Y' }}.</p>

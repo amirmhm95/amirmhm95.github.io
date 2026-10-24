@@ -1,0 +1,15 @@
+{% assign pub = include.publication %}
+<article class="publication{% if include.featured %} publication--featured{% endif %}" id="{{ pub.id }}">
+  {% if include.featured and pub.image %}
+  <a class="publication__image" href="{{ '/research/' | relative_url }}#{{ pub.id }}" aria-label="Research summary: {{ pub.title | escape }}">
+    <img src="{{ pub.image | relative_url }}" alt="{{ pub.image_alt | escape }}" width="640" height="360" loading="lazy" decoding="async">
+  </a>
+  {% endif %}
+  <div class="publication__body">
+    <p class="eyebrow publication__venue">{{ pub.venue | escape }} · {{ pub.year }}{% if pub.status == 'Accepted' %} · Accepted{% endif %}{% if pub.group == 'preprint' %} · {{ pub.status }}{% endif %}</p>
+    <h3>{% if pub.links[0].url %}<a href="{{ pub.links[0].url }}">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}</h3>
+    <p class="publication__authors">{% for author in pub.authors %}{% if author == 'A. Mohammadi' %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    {% if include.featured %}<p>{{ pub.summary | escape }}</p>{% elsif pub.details %}<p class="publication__details">{{ pub.details }}</p>{% endif %}
+    {% if pub.links %}<ul class="resource-links" aria-label="Resources for {{ pub.title | escape }}">{% for link in pub.links %}<li><a href="{{ link.url }}">{{ link.label }}<span class="sr-only">: {{ pub.title | escape }}</span></a></li>{% endfor %}</ul>{% endif %}
+  </div>
+</article>

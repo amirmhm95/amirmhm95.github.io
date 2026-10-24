@@ -9,7 +9,6 @@
 # Ruby Gem
 *.gem
 .bundle
-Gemfile.lock
 **/vendor/bundle
 
 # Node.js and NPM
@@ -27,3 +26,7 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+
+# Project-local tooling and verification artifacts
+.tools/
+.bundle/

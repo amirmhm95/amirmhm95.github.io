@@ -1,8 +1,11 @@
-# main links
 main:
-  - title: "About Me"
+  - title: Home
+    url: /
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: About
     url: /aboutme/
-  - title: "Curriculum Vitae"
-    url: /documents/Amir_CV_2026.pdf
-  #- title: "Blog"
-  #  url: /blog/
+  - title: CV
+    url: /cv/

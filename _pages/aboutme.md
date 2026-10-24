@@ -1,26 +1,13 @@
 ---
+layout: portfolio
 permalink: /aboutme/
-title: "About Me"
-excerpt: "Amir is a Computer Engineering PhD candidate at Texas A&M University."
-layout: single
-author_profile: true
-sitemap: true
-modified: 2025-02-15
-toc: False
+title: About
+kicker: Background & community
+intro: An electrical engineering foundation. A research focus on efficient learning.
+description: Amir Mohammadi's education, research experience, mentoring, teaching, academic service, and awards.
 ---
-
-👋 I'm Amir, a Computer Engineering PhD candidate at Texas A&M University. I work on making deep learning models more efficient in real-world settings, from adapting foundation models with fewer parameters to using physics to reduce the need for labeled data. The projects are funded by MIT Lincoln Laboratory and the National Institutes of Health. I have published in Nature npj Digital Medicine and IEEE venues. 
-
-My research spans audio, image, and time-series modalities, with applications in acoustics and health. These are all areas where data is noisy, labels are expensive, and you cannot just train a bigger model. During my master's, I designed a wearable sensor from the circuit board to the AI/ML algorithm. That experience taught me to think about the problem in a holistic approach. 
-
-
-## 🎓 Education
-**Doctor of Philosophy, Computer Engineering**  
-*Texas A&M University*  
-September 2022 – December 2026
-
-**Master of Science, Electrical Engineering**  
-*Sharif University of Technology*  
-Graduated February 2021
-
-
+<div class="prose"><p>I’m Amir, a Computer Engineering PhD candidate in Electrical & Computer Engineering at Texas A&M University, with graduation expected in December 2026.</p><p>My work spans acoustic classification, foundation-model adaptation, and physics-informed physiological modeling. Before my PhD, I developed a wearable stress-detection system during my master’s at Sharif University of Technology. That experience shaped how I approach research: understanding the measurement system, the signal, and the learning algorithm together.</p><p>I work across audio, images, and physiological time series, with an interest in methods that learn effectively when data and computation are constrained.</p></div>
+<section class="section" aria-labelledby="education-title"><p class="eyebrow">Academic background</p><h2 id="education-title">Education</h2><div class="timeline">{% for item in site.data.cv.education %}<article class="timeline-item"><p class="timeline-date">{{ item.dates }}{% if item.completion %}<br>{{ item.completion }}{% endif %}</p><div><h3>{{ item.degree }}</h3><p class="institution">{{ item.institution }}</p><p class="small-note">{{ item.location }}</p><p class="thesis">{% if forloop.last %}Project{% else %}Thesis{% endif %}: {{ item.thesis }}</p></div></article>{% endfor %}</div></section>
+<section class="section" aria-labelledby="experience-title"><p class="eyebrow">Research experience</p><h2 id="experience-title">From systems to methods.</h2><div class="timeline">{% for item in site.data.cv.experience %}<article class="timeline-item"><p class="timeline-date">{{ item.dates }}</p><div><h3>{{ item.role }}</h3><p class="institution">{{ item.institution }}</p><ul class="body-list">{% for bullet in item.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul></div></article>{% endfor %}</div><p class="support-note">{{ site.data.cv.support }}</p></section>
+<section class="section two-column" aria-label="Teaching and academic service"><div><p class="eyebrow">Teaching & mentoring</p><h2>Sharing what I learn.</h2><ul class="body-list">{% for item in site.data.cv.mentoring %}<li>{{ item }}</li>{% endfor %}</ul></div><div><p class="eyebrow">Academic service</p><h2>Contributing to the community.</h2><ul class="body-list">{% for item in site.data.cv.service %}<li>{{ item }}</li>{% endfor %}</ul></div></section>
+<section class="section two-column" aria-label="Skills and awards"><div><p class="eyebrow">Technical practice</p><h2>Tools & methods</h2><dl class="skills">{% for skill in site.data.cv.skills %}<dt>{{ skill.label }}</dt><dd>{{ skill.items }}</dd>{% endfor %}</dl></div><div><p class="eyebrow">Recognition</p><h2>Awards</h2><ul class="body-list">{% for award in site.data.cv.awards %}<li>{{ award.title }} <span class="small-note">({{ award.date }})</span></li>{% endfor %}</ul><h3>Languages</h3><p>{{ site.data.cv.languages }}</p></div></section>

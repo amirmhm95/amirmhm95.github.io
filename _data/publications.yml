@@ -1,0 +1,107 @@
+# Displayed on the site and used by scripts/build_cv.py. Keep author order intact.
+- id: ssatkd
+  title: Structural and Statistical Audio Texture Knowledge Distillation for Acoustic Classification
+  authors: ["J. Ritu", "A. Mohammadi", "D. Carreiro", "A. Van Dine", "J. Peeples"]
+  venue: IEEE Access
+  year: 2026
+  status: Published
+  group: peer_reviewed
+  note: Publication venue follows the existing October 2026 public CV and the first author's publication list.
+  links:
+    - {label: Preprint, url: "https://arxiv.org/abs/2501.01921"}
+    - {label: PDF, url: "https://arxiv.org/pdf/2501.01921"}
+- id: hpt
+  title: Histogram-based Parameter-efficient Tuning for Passive and Active Sonar Classification
+  authors: ["A. Mohammadi", "D. Carreiro", "A. Van Dine", "J. Peeples"]
+  venue: IEEE International Geoscience and Remote Sensing Symposium (IGARSS)
+  year: 2026
+  status: Accepted
+  group: peer_reviewed
+  selected: true
+  image: /assets/images/research/histogram-tuning.webp
+  image_alt: Histogram tuning adds a trainable distribution module alongside frozen Transformer components.
+  summary: Distribution-aware adaptation of pretrained Transformers for passive and active sonar classification, using a small trainable histogram module.
+  links:
+    - {label: Preprint, url: "https://arxiv.org/abs/2504.15214"}
+    - {label: PDF, url: "https://arxiv.org/pdf/2504.15214"}
+    - {label: Code, url: "https://github.com/Advanced-Vision-and-Learning-Lab/HLAST_DeepShip_ParameterEfficient"}
+- id: neighborhood
+  title: Neighborhood Feature Pooling for Remote Sensing Image Classification
+  authors: ["F. Orvati Nia", "A. Mohammadi", "S. Al Kharsa", "P. Naikare", "Z. Hampel-Arias", "J. Peeples"]
+  venue: IEEE/CVF WACV Workshops
+  year: 2026
+  status: Published
+  group: peer_reviewed
+  details: "pp. 1393–1402"
+  links:
+    - {label: Paper, url: "https://openaccess.thecvf.com/content/WACV2026W/CV4EO/html/Nia_Neighborhood_Feature_Pooling_for_Remote_Sensing_Image_Classification_WACVW_2026_paper.html"}
+- id: features
+  title: Investigation of Time-Frequency Feature Combinations with Histogram Layer Time Delay Neural Networks
+  authors: ["A. Mohammadi", "I. Masabarakiza", "E. Barnes", "D. Carreiro", "A. Van Dine", "J. Peeples"]
+  venue: OCEANS 2025 Brest
+  year: 2025
+  status: Published
+  group: peer_reviewed
+  details: "pp. 1–6"
+  doi: 10.1109/OCEANS58557.2025.11104751
+  links:
+    - {label: Publisher, url: "https://doi.org/10.1109/OCEANS58557.2025.11104751"}
+- id: transfer
+  title: Cross-Domain Knowledge Transfer for Underwater Acoustic Classification Using Pre-trained Models
+  authors: ["A. Mohammadi", "T. Kelhe", "D. Carreiro", "A. Van Dine", "J. Peeples"]
+  venue: OCEANS 2025 Brest
+  year: 2025
+  status: Published
+  group: peer_reviewed
+  details: "pp. 1–6"
+  doi: 10.1109/OCEANS58557.2025.11104545
+  links:
+    - {label: Publisher, url: "https://doi.org/10.1109/OCEANS58557.2025.11104545"}
+- id: pinn
+  title: Physics-informed neural networks for modeling physiological time series for cuffless blood pressure estimation
+  authors: ["K. Sel", "A. Mohammadi", "R. I. Pettigrew", "R. Jafari"]
+  venue: npj Digital Medicine
+  year: 2023
+  status: Published
+  group: peer_reviewed
+  details: "vol. 6, article 110"
+  doi: 10.1038/s41746-023-00853-4
+  selected: true
+  image: /assets/images/research/physics-informed.webp
+  image_alt: A neural network combines supervised and physiology-based losses to estimate blood pressure from bioimpedance.
+  summary: Physiology-guided learning for cuffless blood-pressure estimation, reducing ground-truth training requirements by an average factor of 15 in the evaluated study.
+  links:
+    - {label: Paper, url: "https://www.nature.com/articles/s41746-023-00853-4"}
+    - {label: PDF, url: "https://www.nature.com/articles/s41746-023-00853-4.pdf"}
+- id: stress
+  title: An Integrated Human Stress Detection Sensor Using Supervised Algorithms
+  authors: ["A. Mohammadi", "M. Fakharzadeh", "B. Baraeinejad"]
+  venue: IEEE Sensors Journal
+  year: 2022
+  status: Published
+  group: peer_reviewed
+  details: "vol. 22, no. 8, pp. 8216–8223"
+  doi: 10.1109/JSEN.2022.3157795
+  selected: true
+  image: /assets/images/research/wearable-sensing.webp
+  image_alt: Integrated wearable electronics connect ECG and electrodermal sensing to a Bluetooth Low Energy controller.
+  summary: An integrated wearable sensing platform, connecting low-power circuitry, physiological measurements, and supervised stress classification.
+  links:
+    - {label: Publisher, url: "https://doi.org/10.1109/JSEN.2022.3157795"}
+- id: dual-encoder
+  title: Parameter-efficient Dual-encoder Architecture with Differentiable Choquet Integral Fusion for Underwater Acoustic Classification
+  authors: ["A. Mohammadi", "J. Peeples", "A. Van Dine"]
+  venue: arXiv:2606.02341
+  year: 2026
+  status: Under review
+  group: preprint
+  links:
+    - {label: Preprint, url: "https://arxiv.org/abs/2606.02341"}
+    - {label: PDF, url: "https://arxiv.org/pdf/2606.02341"}
+- id: histology
+  title: "Predicting Ethanol Drinking Status from Nonhuman Primate Liver Histology: A Proof of Concept for Parameter-efficient Fine-tuning in Few-Shot Vision-Language Modeling"
+  authors: ["A. Mohammadi", "R. Khadka", "K. A. Grant", "M. L. Benton", "J. Peeples"]
+  venue: Manuscript
+  year: 2026
+  status: Under review
+  group: preprint

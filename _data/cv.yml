@@ -27,12 +27,21 @@ experience:
   - Contributed to a modular evaluation pipeline for image classification, semantic segmentation, and object detection, comparing pretrained computer vision models and adaptation strategies.
   - Developed physics-informed neural networks for physiological time-series prediction; the collaborative blood-pressure study reduced ground-truth training requirements by an average factor of 15.
   - Benchmarked cross-domain transfer learning, finding a 3-percentage-point classification accuracy improvement from image-pretrained models over audio-pretrained models.
+  about_bullets:
+  - Developed a distribution-aware method for parameter-efficient fine-tuning of Transformer foundation models for waveform-based sensing.
+  - Built a few-shot whole-slide image classification pipeline to investigate parameter-efficient fine-tuning of vision-language models to predict ethanol drinking status from liver histology.
+  - Contributed to an evaluation pipeline for image classification, semantic segmentation, and object detection, comparing pre-trained computer vision models and adaptation strategies.
+  - Improved the classification accuracy of a convolutional neural network by designing a time-frequency feature combination for acoustic applications.
+  - Reduced ground truth data requirements by a factor of 15 for physiological signals by developing physics-informed neural networks for cuffless blood pressure measurement.
+  - Disseminated research findings through publications, presentations, and reports to funding agencies.
 - role: Graduate Student Researcher
   institution: Sharif University of Technology
   dates: July 2019 – February 2021
   bullets:
   - Designed an integrated ECG/EDA wearable sensor, from circuitry and Bluetooth Low Energy electronics to machine-learning algorithms.
   - Achieved 94% stress-detection accuracy in an 18-participant study and threefold battery life relative to the evaluated alternatives.
+  about_bullets:
+  - Designed an ECG + EDA wearable sensor with a 3× longer battery life compared to alternatives and delivered 94% mental stress detection accuracy across 18 participants using machine learning models.
 skills:
 - label: Programming & scientific computing
   items: Python, C, MATLAB, NumPy, pandas, Matplotlib
@@ -41,7 +50,9 @@ skills:
 - label: Methods & tasks
   items: Deep learning, computer vision, vision-language models, parameter-efficient fine-tuning (PEFT), transfer learning, few-shot learning, classification, semantic segmentation, object detection, physics-informed neural networks
 - label: Development tools
-  items: Git, Linux, Jupyter Notebook, high-performance computing
+  items: VS Code, Git, Linux, Jupyter Notebook, high-performance computing
+- label: Research interests
+  items: Data Science, Machine Learning, Applied AI, Foundation Models, Deep Learning Architectures & Techniques, Computer Vision, Generative AI, Physics-Informed Machine Learning, Multi-Modal Learning, Efficient AI
 support: Fully funded doctoral research assistantship support from MIT Lincoln Laboratory, the National Institutes of Health, and the Texas A&M Department of Electrical & Computer Engineering.
 awards:
 - title: IEEE Geoscience and Remote Sensing Society travel grant

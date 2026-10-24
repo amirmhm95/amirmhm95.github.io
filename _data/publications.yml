@@ -152,7 +152,7 @@
   year: 2026
   status: Under review
   group: preprint
-  image: /assets/images/research/method.png
+  image: /assets/images/research/method-from-pdf.png
   image_alt: The supplied method figure shows image and text encoding, multiple instance learning, visual adaptation, task residuals, and slide-level prediction.
   summary: Evaluation of computational pathology vision-language foundation model for few-shot histopathology classification with adapting modules
   feature_title: Vision-language models for digital pathology

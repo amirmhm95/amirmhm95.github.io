@@ -6,7 +6,7 @@ hide_kicker: true
 description: Amir Mohammadi's education, research experience, mentoring, teaching, academic service, and awards.
 ---
 <div class="prose">
-  <p>My doctoral at Texas A&M University work includes adapting vision-language foundation models for histopathology, developing parameter-efficient fine-tuning methods, and modeling physiological time series with physics-informed neural networks. I am also contributing to computer vision evaluation pipelines spanning classification, segmentation, and object detection.</p>
+  <p>My doctoral work at Texas A&M University includes adapting vision-language foundation models for histopathology, developing parameter-efficient fine-tuning methods, and modeling physiological time series with physics-informed neural networks. I am also contributing to computer vision evaluation pipelines spanning classification, segmentation, and object detection.</p>
   <p>Before my PhD, I designed an integrated wearable stress-detection system during my master’s at Sharif University of Technology, developing both its electronics and machine-learning algorithms.</p>
 </div>
 <section class="section" aria-labelledby="education-title"><h2 id="education-title">Education</h2><div class="timeline">{% for item in site.data.cv.education %}<article class="timeline-item"><p class="timeline-date">{{ item.dates }}</p><div><h3>{{ item.degree }}</h3><p class="institution">{{ item.institution }}</p><p class="small-note">{{ item.location }}</p><p class="thesis">{% if forloop.last %}Project{% else %}Thesis{% endif %}: {{ item.thesis }}</p></div></article>{% endfor %}</div></section>

@@ -44,11 +44,11 @@ experience:
   - Designed an ECG + EDA wearable sensor with a 3× longer battery life compared to alternatives and delivered 94% mental stress detection accuracy across 18 participants using machine learning models.
 skills:
 - label: Coding and computing
-  items: Python, C, MATLAB, NumPy, pandas, Matplotlib
+  items: Python, C, MATLAB, NumPy, Pandas, Matplotlib
 - label: Machine learning frameworks
-  items: PyTorch, Hugging Face Transformers, scikit-learn
+  items: PyTorch, Hugging Face Transformers, Scikit-Learn
 - label: Development tools
-  items: VS Code, Git, Linux, Jupyter Notebook, high-performance computing
+  items: VS Code, Git, Linux, Jupyter Notebook, High-Performance Computing
 - label: Research interests
   items: Data Science, Machine Learning, Applied AI, Foundation Models, Deep Learning Architectures & Techniques, Computer Vision, Generative AI, Physics-Informed Machine Learning, Multi-Modal Learning, Efficient AI
 support: Fully funded doctoral research assistantship support from MIT Lincoln Laboratory, the National Institutes of Health, and the Texas A&M Department of Electrical & Computer Engineering.

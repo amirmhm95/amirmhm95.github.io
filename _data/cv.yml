@@ -46,11 +46,11 @@ skills:
 - label: Coding and computing
   items: Python, C, MATLAB, NumPy, Pandas, Matplotlib
 - label: Machine learning frameworks
-  items: PyTorch, Hugging Face Transformers, Scikit-Learn
+  items: PyTorch, Scikit-Learn, Hugging Face
 - label: Development tools
   items: VS Code, Git, Linux, Jupyter Notebook, High-Performance Computing
 - label: Research interests
-  items: Data Science, Machine Learning, Applied AI, Foundation Models, Deep Learning Architectures & Techniques, Computer Vision, Generative AI, Physics-Informed Machine Learning, Multi-Modal Learning, Efficient AI
+  items: Data Science, Machine Learning, Deep Learning Architectures & Techniques, Computer Vision, Generative AI, Physics-Informed Machine Learning, Multi-Modal Learning, Efficient AI, Applied AI, Foundation Models
 support: Fully funded doctoral research assistantship support from MIT Lincoln Laboratory, the National Institutes of Health, and the Texas A&M Department of Electrical & Computer Engineering.
 awards:
 - title: IEEE Geoscience and Remote Sensing Society travel grant

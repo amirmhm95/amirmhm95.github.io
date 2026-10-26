@@ -1,22 +1,20 @@
 # Publication titles, author order, and status are preserved.
-- id: ssatkd
-  title: Structural and Statistical Audio Texture Knowledge Distillation for Acoustic Classification
+- id: histology
+  title: 'Predicting Ethanol Drinking Status from Nonhuman Primate Liver Histology: A Proof of Concept for Parameter-efficient Fine-tuning in Few-Shot Vision-Language Modeling'
   authors:
-  - J. Ritu
   - A. Mohammadi
-  - D. Carreiro
-  - A. Van Dine
+  - R. Khadka
+  - K. A. Grant
+  - M. L. Benton
   - J. Peeples
-  venue: IEEE Access
+  venue: IEEE International Conference on Bioinformatics and Biomedicine
   year: 2026
-  status: Published
+  status: Accepted
   group: peer_reviewed
-  note: Publication venue follows the existing October 2026 public CV and the first author's publication list.
-  links:
-  - label: Preprint
-    url: https://arxiv.org/abs/2501.01921
-  - label: PDF
-    url: https://arxiv.org/pdf/2501.01921
+  image: /assets/images/research/method-from-pdf.png
+  image_alt: The supplied method figure shows image and text encoding, multiple instance learning, visual adaptation, task residuals, and slide-level prediction.
+  summary: Evaluation of computational pathology vision-language foundation model for few-shot histopathology classification with adapting modules
+  feature_title: Vision-language models for digital pathology
 - id: hpt
   title: Histogram-based Parameter-efficient Tuning for Passive and Active Sonar Classification
   authors:
@@ -37,6 +35,24 @@
   - label: PDF
     url: https://arxiv.org/pdf/2504.15214
   feature_title: Distribution-aware foundation-model adaptation
+- id: ssatkd
+  title: Structural and Statistical Audio Texture Knowledge Distillation for Acoustic Classification
+  authors:
+  - J. Ritu
+  - A. Mohammadi
+  - D. Carreiro
+  - A. Van Dine
+  - J. Peeples
+  venue: IEEE Access
+  year: 2026
+  status: Published
+  group: peer_reviewed
+  note: Publication venue follows the existing October 2026 public CV and the first author's publication list.
+  links:
+  - label: Preprint
+    url: https://arxiv.org/abs/2501.01921
+  - label: PDF
+    url: https://arxiv.org/pdf/2501.01921
 - id: neighborhood
   title: Neighborhood Feature Pooling for Remote Sensing Image Classification
   authors:
@@ -140,19 +156,3 @@
     url: https://arxiv.org/abs/2606.02341
   - label: PDF
     url: https://arxiv.org/pdf/2606.02341
-- id: histology
-  title: 'Predicting Ethanol Drinking Status from Nonhuman Primate Liver Histology: A Proof of Concept for Parameter-efficient Fine-tuning in Few-Shot Vision-Language Modeling'
-  authors:
-  - A. Mohammadi
-  - R. Khadka
-  - K. A. Grant
-  - M. L. Benton
-  - J. Peeples
-  venue: Manuscript
-  year: 2026
-  status: Under review
-  group: preprint
-  image: /assets/images/research/method-from-pdf.png
-  image_alt: The supplied method figure shows image and text encoding, multiple instance learning, visual adaptation, task residuals, and slide-level prediction.
-  summary: Evaluation of computational pathology vision-language foundation model for few-shot histopathology classification with adapting modules
-  feature_title: Vision-language models for digital pathology

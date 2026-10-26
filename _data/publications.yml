@@ -13,7 +13,7 @@
   group: peer_reviewed
   image: /assets/images/research/method-from-pdf.png
   image_alt: The supplied method figure shows image and text encoding, multiple instance learning, visual adaptation, task residuals, and slide-level prediction.
-  summary: Evaluation of computational pathology vision-language foundation model for few-shot histopathology classification with adapting modules
+  summary: Frozen pathology encoders and small adaptation modules predict ethanol drinking status from nonhuman primate liver slides, reaching 78.1% mean balanced accuracy with four training subjects per class.
   feature_title: Evaluation of parameter-efficient vision-language models for digital pathology
 - id: hpt
   title: Histogram-based Parameter-efficient Tuning for Passive and Active Sonar Classification
@@ -27,9 +27,9 @@
   year: 2026
   status: Accepted
   group: peer_reviewed
-  image: /assets/images/research/histogram-tuning.webp
-  image_alt: Histogram tuning adds a trainable distribution module alongside frozen Transformer components.
-  summary: Distribution-aware adaptation of pretrained Transformers for passive and active sonar classification by developing and integrating a learnable histogram module.
+  image: /assets/images/research/histogram-tuning-diagram.png
+  image_alt: A trainable histogram branch adds distributional information alongside a frozen Transformer self-attention block.
+  summary: Learnable histogram modules adapt frozen Transformers to passive and active sonar classification, reaching 91.8% mean accuracy on VTUAD with 153,000 trainable parameters.
   links:
   - label: Preprint
     url: https://arxiv.org/abs/2504.15214
@@ -138,7 +138,7 @@
   doi: 10.1109/JSEN.2022.3157795
   image: /assets/images/research/wearable-sensing.webp
   image_alt: Integrated wearable electronics connect ECG and electrodermal sensing to a Bluetooth Low Energy controller.
-  summary: An integrated wearable sensing system, including low-power circuitry, physiological measurements, and machine learning algorithms.
+  summary: A low-power ECG/EDA sensor combines physiological measurements with machine learning, achieving 94.4% mean stress-classification accuracy in an 18-participant study and up to 70 hours of battery life.
   links:
   - label: Paper
     url: https://doi.org/10.1109/JSEN.2022.3157795

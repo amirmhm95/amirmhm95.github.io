@@ -3,13 +3,13 @@ layout: portfolio
 permalink: /research/
 title: Research
 hide_heading: true
-description: Amir Mohammadi's work in vision-language models, digital pathology, model evaluation, foundation-model adaptation, and physiological prediction.
+description: Research on few-shot digital pathology, dual-encoder acoustic classification, distribution-aware model adaptation, and low-power physiological sensing.
 ---
 <section class="research-project" id="histology" aria-labelledby="histology-title">
-  <div class="project-heading"><p class="eyebrow">01 / Computer vision & digital health</p><h2 id="histology-title">Vision-language models for digital pathology.</h2></div>
+  <div class="project-heading"><p class="eyebrow">01 / Computer vision & digital health</p><h2 id="histology-title">Evaluating vision-language models for few-shot digital pathology.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
-      <p>I evaluate a pretrained computational pathology vision-language model for predicting ethanol drinking status from nonhuman primate liver whole-slide images with few labeled examples, comparing visual adapters and textual task residuals with attention-based multiple instance learning. In four-shot experiments, visual adaptation achieved 78.1% mean balanced accuracy versus 43.5% for the ABMIL baseline, using subject-disjoint evaluation over 30 runs.</p>
+      <p>This proof-of-concept study evaluates parameter-efficient adaptation of CONCH, a pretrained pathology vision-language model, to predict ethanol drinking status from rhesus macaque liver whole-slide images. The pipeline combines attention-based multiple instance learning with visual adapters or learned residuals in the text embeddings while keeping the image and text encoders frozen. Using 37 slides and four training subjects per class, a visual adapter achieved 78.1% mean balanced accuracy, compared with 43.5% for the baseline without adaptation. Evaluation used subject-disjoint training, validation, and test sets over 30 runs.</p>
     </div>
     <figure class="research-figure">
       <a href="{{ '/assets/images/research/method-from-pdf.png' | relative_url }}"><img src="{{ '/assets/images/research/method-from-pdf.png' | relative_url }}" alt="Method figure showing tissue patches, frozen image and text encoders, multiple instance learning, a visual adapter, task residuals, and cosine-similarity prediction." width="4320" height="2418" loading="lazy"></a>
@@ -18,43 +18,41 @@ description: Amir Mohammadi's work in vision-language models, digital pathology,
   </div>
 </section>
 
-<section class="research-project" id="hpt" aria-labelledby="hpt-title">
-  <div class="project-heading"><p class="eyebrow">02 / Foundation-model adaptation</p><h2 id="hpt-title">Distribution-aware adaptation for classification.</h2></div>
+<section class="research-project" id="dual-encoder" aria-labelledby="dual-encoder-title">
+  <div class="project-heading"><p class="eyebrow">02 / Acoustic representation & fusion</p><h2 id="dual-encoder-title">Dual-encoder fusion for underwater acoustic classification.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
-      <p>I developed and integrated a learnable histogram module into pretrained Transformers to capture target-domain feature distributions while keeping the backbone frozen. The method enables parameter-efficient adaptation for passive and active sonar classification, with comparisons of accuracy, trainable parameters, and feature representations. On VTUAD, it achieved 91.8% accuracy versus 89.8% for the conventional adapter baseline.</p>
-      <ul class="resource-links"><li><a href="https://arxiv.org/abs/2504.15214">IGARSS 2026 paper</a></li></ul>
+      <p>This framework combines pretrained waveform and spectrogram encoders to classify underwater vessel sounds using complementary temporal and spectral information. Small fine-tuning modules adapt each frozen backbone, while a differentiable Choquet integral fuses their class probabilities and learns how each representation contributes to individual vessel classes. Experiments on DeepShip and ShipsEar use recording-level data splits to compare the combined model with single-encoder baselines. The results show that jointly using both representations can improve classification while keeping the number of trainable parameters small. Learned fusion weights also reveal class-specific preferences for waveform and spectrogram information.</p>
+      <ul class="resource-links"><li><a href="https://arxiv.org/abs/2606.02341">Read the preprint</a></li></ul>
     </div>
-    <figure class="research-figure"><a href="{{ '/assets/images/preprint4.png' | relative_url }}"><img src="{{ '/assets/images/research/histogram-tuning.webp' | relative_url }}" alt="A trainable histogram module runs alongside frozen Transformer components." width="887" height="314" loading="lazy"></a><figcaption>Histogram-based tuning within a Transformer block. <a href="{{ '/assets/images/preprint4.png' | relative_url }}">View full-size figure</a>.</figcaption></figure>
+    <figure class="research-figure">
+      <a href="{{ '/assets/images/research/dual-encoder-fusion.png' | relative_url }}"><img src="{{ '/assets/images/research/dual-encoder-fusion.png' | relative_url }}" alt="Parallel waveform and spectrogram encoders contain trainable adaptation modules, with each branch's classifier feeding a shared fusion stage for the final prediction." width="4778" height="1696" loading="lazy"></a>
+      <figcaption>Parameter-efficient waveform and spectrogram encoders feed a learned Choquet-integral fusion stage. <a href="{{ '/assets/images/research/dual-encoder-fusion.png' | relative_url }}">View full-size figure</a>.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="research-project" id="pinn" aria-labelledby="pinn-title">
-  <div class="project-heading"><p class="eyebrow">03 / Physiological time series</p><h2 id="pinn-title">Physics-informed models for physiological prediction.</h2></div>
+<section class="research-project" id="hpt" aria-labelledby="hpt-title">
+  <div class="project-heading"><p class="eyebrow">03 / Foundation-model adaptation</p><h2 id="hpt-title">Distribution-aware tuning for sonar classification.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
-      <p>I co-developed physics-informed neural networks for cuffless blood-pressure estimation from physiological time series. The approach incorporates physiological relationships expressed through Taylor approximations into supervised training. The collaborative study reported an average 15 times reduction in ground truth training labels compared with the tested time-series baselines.</p>
-      <ul class="resource-links"><li><a href="https://www.nature.com/articles/s41746-023-00853-4">npj Digital Medicine, 2023</a></li></ul>
+      <p>This study introduces histogram-based parameter-efficient tuning (HPT), which adapts pretrained Transformers by learning distributions of intermediate features while keeping the backbone frozen. Small histogram modules add target-domain statistics alongside frozen self-attention components, helping the model accommodate differences between pretraining and downstream data. Evaluation covers three passive-sonar datasets and two active-sonar image datasets. On VTUAD, HPT achieved 91.8% mean classification accuracy with 153,000 trainable parameters, compared with 89.8% for the best tested conventional adapter. The method also remained competitive with other parameter-efficient approaches on active sonar imagery.</p>
+      <ul class="resource-links"><li><a href="https://arxiv.org/abs/2504.15214">IGARSS 2026 paper</a></li></ul>
     </div>
-    <figure class="research-figure"><a href="{{ '/assets/images/paper1.png' | relative_url }}"><img src="{{ '/assets/images/research/physics-informed.webp' | relative_url }}" alt="A neural network combines physiological features with supervised and physics-based training objectives." width="1264" height="667" loading="lazy"></a><figcaption>Combining physiological relationships and measured data during training. <a href="{{ '/assets/images/paper1.png' | relative_url }}">View full-size figure</a>.</figcaption></figure>
+    <figure class="research-figure">
+      <a href="{{ '/assets/images/research/histogram-tuning-diagram.png' | relative_url }}"><img src="{{ '/assets/images/research/histogram-tuning-diagram.png' | relative_url }}" alt="A trainable histogram branch augments a frozen layer-normalization and self-attention block through a residual connection." width="3763" height="1407" loading="lazy"></a>
+      <figcaption>A trainable histogram module adds distributional information alongside frozen self-attention features. <a href="{{ '/assets/images/research/histogram-tuning-diagram.png' | relative_url }}">View full-size figure</a>.</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="research-project" id="stress" aria-labelledby="stress-title">
-  <div class="project-heading"><p class="eyebrow">04 / Biomedical sensing</p><h2 id="stress-title">An integrated wearable for stress detection.</h2></div>
+  <div class="project-heading"><p class="eyebrow">04 / Biomedical sensing</p><h2 id="stress-title">Integrated physiological sensing for mental stress detection.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
-      <p>During my master’s research, I designed an ECG/EDA wearable stress-detection system, from its circuitry and Bluetooth Low Energy electronics to supervised learning algorithms. The 18-participant study achieved 94% classification accuracy and threefold battery life relative to the comparison devices.</p>
+      <p>This study integrates low-power electrocardiogram (ECG) and electrodermal activity (EDA) sensing with signal processing and supervised learning to distinguish mental stress from relaxation. Analysis of a public physiological dataset guided the choice of two signals, reducing sensor requirements while preserving classification performance. A custom sensor board collects both signals and transmits them over Bluetooth Low Energy. In a controlled study of 18 participants completing mental arithmetic and Stroop tasks, the system achieved 94.4% mean classification accuracy with a k-nearest-neighbor classifier. The prototype consumed less than 16 mW and supported up to 70 hours of battery operation during transmission.</p>
       <ul class="resource-links"><li><a href="https://doi.org/10.1109/JSEN.2022.3157795">IEEE Sensors Journal, 2022</a></li></ul>
     </div>
     <figure class="research-figure"><a href="{{ '/assets/images/paper2.png' | relative_url }}"><img src="{{ '/assets/images/research/wearable-sensing.webp' | relative_url }}" alt="Wearable electronics including ECG and electrodermal sensing, power management, and a Bluetooth Low Energy microcontroller." width="831" height="669" loading="lazy"></a><figcaption>An integrated physiological sensing platform. <a href="{{ '/assets/images/paper2.png' | relative_url }}">View full-size figure</a>.</figcaption></figure>
-  </div>
-</section>
-
-<section class="section" id="emerging" aria-labelledby="emerging-title">
-  <p class="eyebrow">Current projects</p><h2 id="emerging-title">Computer vision evaluation & multimodal learning.</h2>
-  <div class="two-column">
-    <article class="prose" id="vision-evaluation"><h3>Computer vision evaluation</h3><p>I contribute to a modular evaluation pipeline for image classification, semantic segmentation, and object detection, using shared protocols to compare pretrained models and adaptation strategies.</p></article>
-    <article class="prose"><h3>Multimodal acoustic classification</h3><p>My dual-encoder work combines waveform and spectrogram representations through differentiable Choquet-integral fusion, learning how to combine complementary information for classification.</p><a href="https://arxiv.org/abs/2606.02341">Read the preprint <span aria-hidden="true">↗</span></a></article>
   </div>
 </section>

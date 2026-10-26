@@ -37,7 +37,7 @@ description: Research on few-shot digital pathology, dual-encoder acoustic class
   <div class="project-grid">
     <div class="project-copy">
       <p>This study introduces histogram-based parameter-efficient tuning (HPT), which adapts pretrained Transformers by learning distributions of intermediate features while keeping the backbone frozen. Small histogram modules add target-domain statistics alongside frozen self-attention components, helping the model accommodate differences between pretraining and downstream data. Evaluation covers three passive-sonar datasets and two active-sonar image datasets. On VTUAD, HPT achieved 91.8% mean classification accuracy with 153,000 trainable parameters, compared with 89.8% for the best tested conventional adapter. The method also remained competitive with other parameter-efficient approaches on active sonar imagery.</p>
-      <ul class="resource-links"><li><a href="https://arxiv.org/abs/2504.15214">IGARSS 2026 paper</a></li></ul>
+      <ul class="resource-links"><li><a href="https://ieeexplore.ieee.org/abstract/document/11730373">IGARSS 2026 paper</a></li></ul>
     </div>
     <figure class="research-figure">
       <a href="{{ '/assets/images/research/histogram-tuning-diagram.png' | relative_url }}"><img src="{{ '/assets/images/research/histogram-tuning-diagram.png' | relative_url }}" alt="A trainable histogram branch augments a frozen layer-normalization and self-attention block through a residual connection." width="3763" height="1407" loading="lazy"></a>

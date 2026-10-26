@@ -25,16 +25,14 @@
   venue: IEEE International Geoscience and Remote Sensing Symposium (IGARSS)
   feature_venue: IEEE International Geoscience and Remote Sensing Symposium
   year: 2026
-  status: Accepted
+  status: Published
   group: peer_reviewed
   image: /assets/images/research/histogram-tuning-diagram.png
   image_alt: A trainable histogram branch adds distributional information alongside a frozen Transformer self-attention block.
   summary: Learnable histogram modules adapt frozen Transformers to passive and active sonar classification, reaching 91.8% mean accuracy on VTUAD with 153,000 trainable parameters.
   links:
-  - label: Preprint
-    url: https://arxiv.org/abs/2504.15214
-  - label: PDF
-    url: https://arxiv.org/pdf/2504.15214
+  - label: Paper
+    url: https://ieeexplore.ieee.org/abstract/document/11730373
   feature_title: Distribution-aware foundation-model adaptation
 - id: ssatkd
   title: Structural and Statistical Audio Texture Knowledge Distillation for Acoustic Classification
@@ -50,10 +48,8 @@
   group: peer_reviewed
   note: Publication venue follows the existing October 2026 public CV and the first author's publication list.
   links:
-  - label: Preprint
-    url: https://arxiv.org/abs/2501.01921
-  - label: PDF
-    url: https://arxiv.org/pdf/2501.01921
+  - label: Paper
+    url: https://ieeexplore.ieee.org/abstract/document/11700448
 - id: neighborhood
   title: Neighborhood Feature Pooling for Remote Sensing Image Classification
   authors:

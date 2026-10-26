@@ -14,7 +14,7 @@
   image: /assets/images/research/method-from-pdf.png
   image_alt: The supplied method figure shows image and text encoding, multiple instance learning, visual adaptation, task residuals, and slide-level prediction.
   summary: Evaluation of computational pathology vision-language foundation model for few-shot histopathology classification with adapting modules
-  feature_title: Vision-language models for digital pathology
+  feature_title: Evaluation of parameter-efficient vision-language models for digital pathology
 - id: hpt
   title: Histogram-based Parameter-efficient Tuning for Passive and Active Sonar Classification
   authors:
@@ -23,6 +23,7 @@
   - A. Van Dine
   - J. Peeples
   venue: IEEE International Geoscience and Remote Sensing Symposium (IGARSS)
+  feature_venue: IEEE International Geoscience and Remote Sensing Symposium
   year: 2026
   status: Accepted
   group: peer_reviewed
@@ -137,7 +138,7 @@
   doi: 10.1109/JSEN.2022.3157795
   image: /assets/images/research/wearable-sensing.webp
   image_alt: Integrated wearable electronics connect ECG and electrodermal sensing to a Bluetooth Low Energy controller.
-  summary: An integrated wearable sensing platform, connecting low-power circuitry, physiological measurements, and supervised stress classification.
+  summary: An integrated wearable sensing system, including low-power circuitry, physiological measurements, and machine learning algorithms.
   links:
   - label: Paper
     url: https://doi.org/10.1109/JSEN.2022.3157795

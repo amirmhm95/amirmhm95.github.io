@@ -22,7 +22,7 @@ A static Jekyll site with a custom, accessible portfolio layout. The active page
 
 Use `relative_url` for internal links and `absolute_url` for canonical/social URLs. Keep `url: https://amirmhm95.github.io` and `baseurl: ""` together unless the hosting address changes. Existing `/aboutme/` and PDF addresses are preserved. The CV navigation item opens the PDF directly; `/cv/` remains an accessible HTML overview. PDF links do not use a download attribute. The unused blog is excluded from the build and sitemap.
 
-Publication author order and review status must be checked before updates. `_data/publications.yml` also feeds the PDF generator. If research or career data changes, regenerate the PDF and update the prose where relevant. Keep `updated` and `last_modified_at` in `_config.yml` current. The website uses Gmail for all contact links. The final examination and expected graduation date are recorded separately; the degree is not presented as conferred.
+Publication author order and review status must be checked before updates. Website content is maintained separately from the author-supplied PDF. Keep `updated` and `last_modified_at` in `_config.yml` current when updating website content. The website uses Gmail for all contact links. The final examination and expected graduation date are recorded separately; the degree is not presented as conferred.
 
 ## Preview and build
 
@@ -48,19 +48,9 @@ The generated `_site/` directory is ignored. Never commit `.tools/`, `.bundle/`,
 
 The public CV is an author-supplied PDF. Its fonts, layout, metadata, and contents are preserved exactly. Neither the comprehensive Pages document nor the source PDF is modified.
 
-Copy your final PDF to `documents/Amir_CV_2026.pdf`, keeping that filename so existing links continue to work. Alternatively, use the import helper:
+Replace `documents/Amir_CV_2026.pdf`, keeping that filename, then commit and push. No import, synchronization, or local build command is required. The normal GitHub Pages build publishes this file unchanged.
 
-```sh
-python3 scripts/build_cv.py /path/to/Amir_CV_2026.pdf
-```
-
-In this prepared working copy:
-
-```sh
-PYTHONPATH="$PWD/.tools/python" PYTHONDONTWRITEBYTECODE=1 python3 scripts/build_cv.py /path/to/Amir_CV_2026.pdf
-```
-
-The helper copies bytes without regeneration or restyling, verifies that the source and copy are identical, and updates the page-count label in the HTML overview. It requires an explicit source path and never opens Pages. Rebuild the website afterward. Website biography/publication data is maintained independently from the author-edited PDF.
+This is the only CV PDF maintained in the source. There is no old-address copy, and the HTML CV link does not hardcode a page count. Website biography/publication data is maintained independently from the author-edited PDF.
 
 ## Verify changes
 
@@ -93,7 +83,7 @@ Then update this local checkout’s remote (not global Git settings):
 git remote set-url origin https://github.com/amirmhm95/amirmhm95.github.io.git
 ```
 
-The former `/amirmmohammadi/` homepage and its About, Research, Publications, and CV overview routes redirect to the corresponding root routes. The old `/amirmmohammadi/documents/Amir_CV_2026.pdf` address retains an identical PDF copy, preserving links already embedded in existing CVs. Redirect pages and the duplicate PDF are excluded from the sitemap.
+The former `/amirmmohammadi/` homepage and its About, Research, Publications, and CV overview routes redirect to the corresponding root routes. These redirect pages are excluded from the sitemap. The old `/amirmmohammadi/documents/Amir_CV_2026.pdf` copy has been removed; all current CV links use `/documents/Amir_CV_2026.pdf`.
 
 ## Publishing
 

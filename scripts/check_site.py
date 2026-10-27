@@ -97,7 +97,7 @@ publications = yaml.safe_load((ROOT / "_data/publications.yml").read_text())
 publication_page = pages[SITE / "publications/index.html"]
 for pub in publications:
     assert pub["id"] in publication_page.ids, f"Publication missing from website: {pub['id']}"
-assert len(pdf.pages) == 2, "Review the CV page-count label if pagination changes."
+assert len(pdf.pages) > 0, "The CV PDF must contain at least one page."
 assert all(page.extract_text().strip() for page in pdf.pages), "PDF contains an empty/image-only page."
 assert "amir.mhm.ee@gmail.com" in pdf_text
 assert pdf.pages[0].extract_text().lstrip().startswith("Amirmohammad (Amir) Mohammadi"), "PDF reading order should start with the name."
@@ -105,6 +105,9 @@ assert "U.S. Permanent Resident" in pdf_text
 assert not (SITE / "blog").exists(), "Empty blog must not be published."
 assert not (SITE / "scripts").exists(), "Build tools must not be published."
 assert (SITE / "documents/Amir_CV_2026.pdf").read_bytes() == (ROOT / "documents/Amir_CV_2026.pdf").read_bytes()
+legacy_cv = Path("amirmmohammadi/documents/Amir_CV_2026.pdf")
+assert not (ROOT / legacy_cv).exists(), "Keep only the current CV; do not recreate a legacy copy."
+assert not (SITE / legacy_cv).exists(), "The old CV must not be published."
 sitemap = (SITE / "sitemap.xml").read_text()
 assert "amirmmohammadi.github.io" not in sitemap
 assert "/blog/" not in sitemap
@@ -115,7 +118,6 @@ if base == "":
         assert legacy.canonicals == [expected]
         assert legacy.refresh == ["0;url=" + expected]
         assert legacy.noindex
-    assert (SITE / "amirmmohammadi/documents/Amir_CV_2026.pdf").read_bytes() == (ROOT / "documents/Amir_CV_2026.pdf").read_bytes()
     assert origin + "/amirmmohammadi/" not in sitemap
 print(f"Checked {len(pages)} HTML pages, all local links/resources/fragments, metadata, sitemap, and {len(pdf.pages)} PDF pages.")
 annotation_count = sum(len(p["/Annots"]) if "/Annots" in p else 0 for p in pdf.pages)

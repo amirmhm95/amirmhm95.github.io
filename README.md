@@ -13,14 +13,14 @@ A static Jekyll site with a custom, accessible portfolio layout. The active page
 | Publications, author order, status, resource links | `_data/publications.yml` |
 | Homepage | `index.html` |
 | Research summaries | `_pages/research.html` |
-| About, HTML CV, publication list | `_pages/` |
+| HTML CV, publication list | `_pages/` |
 | Navigation | `_data/navigation.yml` |
 | Active template and components | `_layouts/portfolio.html`, `_includes/portfolio/` |
 | Active styles | `assets/css/portfolio.css` |
 | Site address, update date, indexing | `_config.yml` |
 | Public PDF | `documents/Amir_CV_2026.pdf` |
 
-Use `relative_url` for internal links and `absolute_url` for canonical/social URLs. Keep `url: https://amirmhm95.github.io` and `baseurl: ""` together unless the hosting address changes. Existing `/aboutme/` and PDF addresses are preserved. The CV navigation item opens the PDF directly; `/cv/` remains an accessible HTML overview. PDF links do not use a download attribute. The unused blog is excluded from the build and sitemap.
+Use `relative_url` for internal links and `absolute_url` for canonical/social URLs. Keep `url: https://amirmhm95.github.io` and `baseurl: ""` together unless the hosting address changes. The CV navigation item opens the PDF directly; `/cv/` remains an accessible HTML overview. PDF links do not use a download attribute. The About page has been removed, and Publications lists only peer-reviewed papers. The unused blog is excluded from the build and sitemap.
 
 Publication author order and review status must be checked before updates. Website content is maintained separately from the author-supplied PDF. Keep `updated` and `last_modified_at` in `_config.yml` current when updating website content. The website uses Gmail for all contact links. The final examination and expected graduation date are recorded separately; the degree is not presented as conferred.
 
@@ -83,12 +83,12 @@ Then update this local checkout’s remote (not global Git settings):
 git remote set-url origin https://github.com/amirmhm95/amirmhm95.github.io.git
 ```
 
-The former `/amirmmohammadi/` homepage and its About, Research, Publications, and CV overview routes redirect to the corresponding root routes. These redirect pages are excluded from the sitemap. The old `/amirmmohammadi/documents/Amir_CV_2026.pdf` copy has been removed; all current CV links use `/documents/Amir_CV_2026.pdf`.
+The former `/amirmmohammadi/` homepage and its Research, Publications, and CV overview routes redirect to the corresponding root routes. These redirect pages are excluded from the sitemap. Both About routes and the old `/amirmmohammadi/documents/Amir_CV_2026.pdf` copy have been removed; all current CV links use `/documents/Amir_CV_2026.pdf`.
 
 ## Publishing
 
 **No deployment is initiated by these scripts.** Review and push the source changes yourself. Keep the repository's existing GitHub Pages settings; the source files do not change those settings. If Pages is configured to build from `master` at the repository root, pushing to that source branch will trigger GitHub's normal Pages build. Confirm the configured publishing source in GitHub → Settings → Pages before changing it.
 
-The validation workflow runs on pull requests or manual dispatch and has read-only repository permissions. It does not publish the website. After your push, check the Pages build, then open the homepage, Research, Publications, About, CV, and PDF links on the public address.
+The validation workflow runs on pull requests or manual dispatch and has read-only repository permissions. It does not publish the website. After your push, check the Pages build, then open the homepage, Research, Publications, CV, and PDF links on the public address.
 
 Preserve `LICENSE` and attribution for retained third-party theme code and research figures.

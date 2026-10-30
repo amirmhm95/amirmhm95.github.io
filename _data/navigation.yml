@@ -5,7 +5,5 @@ main:
     url: /research/
   - title: Publications
     url: /publications/
-  - title: About
-    url: /aboutme/
   - title: CV
     url: /documents/Amir_CV_2026.pdf

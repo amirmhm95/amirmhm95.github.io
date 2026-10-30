@@ -94,16 +94,22 @@ pdf_text = " ".join(page.extract_text() for page in pdf.pages)
 normalize = lambda text: re.sub(r"\s+", " ", text).strip()
 pdf_text = normalize(pdf_text)
 publications = yaml.safe_load((ROOT / "_data/publications.yml").read_text())
+reviewed_publications = [pub for pub in publications if pub["group"] == "peer_reviewed"]
 publication_page = pages[SITE / "publications/index.html"]
 for pub in publications:
-    assert pub["id"] in publication_page.ids, f"Publication missing from website: {pub['id']}"
+    if pub["group"] == "peer_reviewed":
+        assert pub["id"] in publication_page.ids, f"Publication missing from website: {pub['id']}"
+    else:
+        assert pub["id"] not in publication_page.ids, f"Under-review work should not appear in Publications: {pub['id']}"
 assert len(pdf.pages) > 0, "The CV PDF must contain at least one page."
 assert all(page.extract_text().strip() for page in pdf.pages), "PDF contains an empty/image-only page."
 assert "amir.mhm.ee@gmail.com" in pdf_text
-assert pdf.pages[0].extract_text().lstrip().startswith("Amirmohammad (Amir) Mohammadi"), "PDF reading order should start with the name."
+assert pdf.pages[0].extract_text().lstrip().startswith("Amirmohammad Mohammadi"), "PDF reading order should start with the name."
 assert "U.S. Permanent Resident" in pdf_text
 assert not (SITE / "blog").exists(), "Empty blog must not be published."
 assert not (SITE / "scripts").exists(), "Build tools must not be published."
+assert not (SITE / "aboutme").exists(), "The About page has been removed."
+assert not (SITE / "amirmmohammadi/aboutme").exists(), "The old About redirect has been removed."
 assert (SITE / "documents/Amir_CV_2026.pdf").read_bytes() == (ROOT / "documents/Amir_CV_2026.pdf").read_bytes()
 legacy_cv = Path("amirmmohammadi/documents/Amir_CV_2026.pdf")
 assert not (ROOT / legacy_cv).exists(), "Keep only the current CV; do not recreate a legacy copy."
@@ -112,7 +118,7 @@ sitemap = (SITE / "sitemap.xml").read_text()
 assert "amirmmohammadi.github.io" not in sitemap
 assert "/blog/" not in sitemap
 if base == "":
-    for route in ("", "aboutme/", "research/", "publications/", "cv/"):
+    for route in ("", "research/", "publications/", "cv/"):
         legacy = pages[SITE / "amirmmohammadi" / route / "index.html"]
         expected = origin + "/" + route
         assert legacy.canonicals == [expected]
@@ -121,7 +127,7 @@ if base == "":
     assert origin + "/amirmmohammadi/" not in sitemap
 print(f"Checked {len(pages)} HTML pages, all local links/resources/fragments, metadata, sitemap, and {len(pdf.pages)} PDF pages.")
 annotation_count = sum(len(p["/Annots"]) if "/Annots" in p else 0 for p in pdf.pages)
-print(f"Website includes all {len(publications)} publications/manuscripts; the author-supplied PDF has {annotation_count} link annotations.")
+print(f"Publications includes all {len(reviewed_publications)} peer-reviewed papers; the author-supplied PDF has {annotation_count} link annotations.")
 if errors:
     print("\n".join(errors), file=sys.stderr)
     sys.exit(1)

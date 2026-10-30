@@ -18,7 +18,7 @@ ARTIFACTS = ROOT / ".tools/review"
 ARTIFACTS.mkdir(parents=True, exist_ok=True)
 config = yaml.safe_load((ROOT / "_config.yml").read_text())
 BASE = config["baseurl"]
-routes = ["/", "/research/", "/publications/", "/aboutme/", "/cv/", "/404.html"]
+routes = ["/", "/research/", "/publications/", "/cv/", "/404.html"]
 
 
 class Handler(SimpleHTTPRequestHandler):
@@ -54,7 +54,7 @@ try:
                 response = page.goto(origin + route, wait_until="networkidle")
                 assert response.status == 200, (route, response.status)
                 assert page.locator("h1").count() == 1
-                assert page.locator("nav[aria-label='Main navigation'] a").count() == 5
+                assert page.locator("nav[aria-label='Main navigation'] a").count() == 4
                 if route not in ("/404.html", "/cv/"):
                     assert page.locator("[aria-current='page']").count() == 1
                 # Exercise below-the-fold content before judging image loading or captures.
@@ -104,7 +104,7 @@ try:
         page.keyboard.press("Tab")
         page.keyboard.press("Tab")
         assert page.evaluate("document.activeElement.className") == "wordmark"
-        for name in ("Home", "Research", "Publications", "About", "CV"):
+        for name in ("Home", "Research", "Publications", "CV"):
             page.keyboard.press("Tab")
             assert page.evaluate("document.activeElement.textContent") == name
             outline = page.evaluate("getComputedStyle(document.activeElement).outlineWidth")
@@ -120,7 +120,7 @@ try:
         page_no_js = context_no_js.new_page()
         for route in routes:
             page_no_js.goto(origin + route)
-            assert page_no_js.locator("nav[aria-label='Main navigation'] a:visible").count() == 5
+            assert page_no_js.locator("nav[aria-label='Main navigation'] a:visible").count() == 4
             assert page_no_js.locator("h1").is_visible()
         context_no_js.close()
         assert not errors, errors

@@ -3,8 +3,7 @@ layout: portfolio
 permalink: /publications/
 title: Publications
 hide_heading: true
-description: Publications and manuscripts by Amir Mohammadi, with paper, preprint, and code links.
+description: Peer-reviewed publications by Amirmohammad Mohammadi, with paper and resource links.
 ---
 <section class="section publication-section" aria-labelledby="reviewed-title"><h2 id="reviewed-title">Peer-reviewed publications</h2><div class="publication-list">{% assign reviewed = site.data.publications | where: 'group', 'peer_reviewed' %}{% for publication in reviewed %}{% include portfolio/publication.html publication=publication %}{% endfor %}</div></section>
-<section class="section publication-section" aria-labelledby="manuscripts-title"><h2 id="manuscripts-title">Manuscripts under review</h2><div class="publication-list">{% assign manuscripts = site.data.publications | where: 'group', 'preprint' %}{% for publication in manuscripts %}{% include portfolio/publication.html publication=publication %}{% endfor %}</div></section>
 <p class="small-note">Last reviewed {{ site.updated | date: '%B %-d, %Y' }}.</p>

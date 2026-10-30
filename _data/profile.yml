@@ -14,7 +14,7 @@ website: https://amirmhm95.github.io/
 cv: /documents/Amir_CV_2026.pdf
 graduation: Expected to graduate in December 2026.
 focus: Machine learning, deep learning, computer vision, and AI for health; foundation models, multimodal learning, and physiological modeling.
-summary: I develop algorithms that help machine learning models adapt to new settings with stronger performance and lower computational costs. My work spans parameter-efficient fine-tuning, physics-informed modeling, and model evaluation, including settings with limited labeled data and noisy signals. I apply these approaches to digital health, computer vision, acoustics, and sensing.
+summary: Hi, I'm Amir, a computer scientist specializing in machine learning and AI. My work spans parameter-efficient fine-tuning, physics-informed modeling, and model evaluation, including settings with limited labeled data and noisy signals. I apply these approaches to digital health, computer vision, acoustics, and sensing.
 exam: Passed the PhD final examination in October 2026.
 featured_publications:
 - histology

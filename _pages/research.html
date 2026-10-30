@@ -3,7 +3,7 @@ layout: portfolio
 permalink: /research/
 title: Research
 hide_heading: true
-description: Research on few-shot digital pathology, dual-encoder acoustic classification, distribution-aware model adaptation, and low-power physiological sensing.
+description: Research on few-shot digital pathology, distribution-aware model adaptation, and low-power physiological sensing.
 ---
 <section class="research-project" id="histology" aria-labelledby="histology-title">
   <div class="project-heading"><p class="eyebrow">01 / Computer vision & digital health</p><h2 id="histology-title">Evaluating vision-language models for few-shot digital pathology.</h2></div>
@@ -18,22 +18,8 @@ description: Research on few-shot digital pathology, dual-encoder acoustic class
   </div>
 </section>
 
-<section class="research-project" id="dual-encoder" aria-labelledby="dual-encoder-title">
-  <div class="project-heading"><p class="eyebrow">02 / Acoustic representation & fusion</p><h2 id="dual-encoder-title">Dual-encoder fusion for underwater acoustic classification.</h2></div>
-  <div class="project-grid">
-    <div class="project-copy">
-      <p>This framework combines pretrained waveform and spectrogram encoders to classify underwater vessel sounds using complementary temporal and spectral information. Small fine-tuning modules adapt each frozen backbone, while a differentiable Choquet integral fuses their class probabilities and learns how each representation contributes to individual vessel classes. Experiments on DeepShip and ShipsEar use recording-level data splits to compare the combined model with single-encoder baselines. The results show that jointly using both representations can improve classification while keeping the number of trainable parameters small. Learned fusion weights also reveal class-specific preferences for waveform and spectrogram information.</p>
-      <ul class="resource-links"><li><a href="https://arxiv.org/abs/2606.02341">Read the preprint</a></li></ul>
-    </div>
-    <figure class="research-figure">
-      <a href="{{ '/assets/images/research/dual-encoder-fusion.png' | relative_url }}"><img src="{{ '/assets/images/research/dual-encoder-fusion.png' | relative_url }}" alt="Parallel waveform and spectrogram encoders contain trainable adaptation modules, with each branch's classifier feeding a shared fusion stage for the final prediction." width="4778" height="1696" loading="lazy"></a>
-      <figcaption>Parameter-efficient waveform and spectrogram encoders feed a learned Choquet-integral fusion stage. <a href="{{ '/assets/images/research/dual-encoder-fusion.png' | relative_url }}">View full-size figure</a>.</figcaption>
-    </figure>
-  </div>
-</section>
-
 <section class="research-project" id="hpt" aria-labelledby="hpt-title">
-  <div class="project-heading"><p class="eyebrow">03 / Foundation-model adaptation</p><h2 id="hpt-title">Distribution-aware tuning for sonar classification.</h2></div>
+  <div class="project-heading"><p class="eyebrow">02 / Foundation-model adaptation</p><h2 id="hpt-title">Distribution-aware tuning for sonar classification.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
       <p>This study introduces histogram-based parameter-efficient tuning (HPT), which adapts pretrained Transformers by learning distributions of intermediate features while keeping the backbone frozen. Small histogram modules add target-domain statistics alongside frozen self-attention components, helping the model accommodate differences between pretraining and downstream data. Evaluation covers three passive-sonar datasets and two active-sonar image datasets. On VTUAD, HPT achieved 91.8% mean classification accuracy with 153,000 trainable parameters, compared with 89.8% for the best tested conventional adapter. The method also remained competitive with other parameter-efficient approaches on active sonar imagery.</p>
@@ -47,7 +33,7 @@ description: Research on few-shot digital pathology, dual-encoder acoustic class
 </section>
 
 <section class="research-project" id="stress" aria-labelledby="stress-title">
-  <div class="project-heading"><p class="eyebrow">04 / Biomedical sensing</p><h2 id="stress-title">Integrated physiological sensing for mental stress detection.</h2></div>
+  <div class="project-heading"><p class="eyebrow">03 / Biomedical sensing</p><h2 id="stress-title">Integrated physiological sensing for mental stress detection.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
       <p>This study integrates low-power electrocardiogram (ECG) and electrodermal activity (EDA) sensing with signal processing and supervised learning to distinguish mental stress from relaxation. Analysis of a public physiological dataset guided the choice of two signals, reducing sensor requirements while preserving classification performance. A custom sensor board collects both signals and transmits them over Bluetooth Low Energy. In a controlled study of 18 participants completing mental arithmetic and Stroop tasks, the system achieved 94.4% mean classification accuracy with a k-nearest-neighbor classifier. The prototype consumed less than 16 mW and supported up to 70 hours of battery operation during transmission.</p>

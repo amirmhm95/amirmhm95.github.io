@@ -15,6 +15,6 @@ home: true
 </section>
 
 <section class="section" aria-labelledby="selected-title">
-  <div class="section-heading"><div><p class="eyebrow">Publications</p><h2 id="selected-title">Research highlights</h2></div></div>
+  <div class="section-heading"><h2 id="selected-title">Research highlights</h2></div>
   <div class="featured-grid">{% for publication_id in profile.featured_publications %}{% assign publication = site.data.publications | where: 'id', publication_id | first %}{% include portfolio/publication.html publication=publication featured=true %}{% endfor %}</div>
 </section>

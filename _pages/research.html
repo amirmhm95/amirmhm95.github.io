@@ -6,7 +6,7 @@ hide_heading: true
 description: Research on parameter-efficient vision-language modeling for few-shot computational pathology and distribution-guided tuning for waveform-based sensing.
 ---
 <section class="research-project" id="histology" aria-labelledby="histology-title">
-  <div class="project-heading"><p class="eyebrow">01 / Computer vision & digital health</p><h2 id="histology-title">Evaluating parameter-efficient vision-language modeling for few-shot computational pathology.</h2></div>
+  <div class="project-heading"><h2 id="histology-title">Evaluating parameter-efficient vision-language modeling for few-shot computational pathology.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
       <p>This proof-of-concept study evaluates parameter-efficient adaptation of CONCH, a pretrained pathology vision-language model, to predict ethanol drinking status from rhesus macaque liver whole-slide images. The pipeline, built upon the MIL-Adapter framework, combines attention-based multiple instance learning with visual adapters or learned residuals in the text embeddings while keeping the image and text encoders frozen. Using 37 slides and four training subjects per class, a visual adapter achieved 78.1% mean balanced accuracy, compared with 43.5% for the baseline without adaptation. Evaluation used subject-disjoint training, validation, and test sets over 30 runs.</p>
@@ -19,7 +19,7 @@ description: Research on parameter-efficient vision-language modeling for few-sh
 </section>
 
 <section class="research-project" id="hpt" aria-labelledby="hpt-title">
-  <div class="project-heading"><p class="eyebrow">02 / Foundation-model adaptation</p><h2 id="hpt-title">Distribution-guided parameter-efficient tuning for waveform-based sensing.</h2></div>
+  <div class="project-heading"><h2 id="hpt-title">Distribution-guided parameter-efficient tuning for waveform-based sensing.</h2></div>
   <div class="project-grid">
     <div class="project-copy">
       <p>This study introduces histogram-based parameter-efficient tuning (HPT), which adapts pretrained Transformers by learning distributions of intermediate features while keeping the backbone frozen. Histogram layers add target-domain statistics alongside frozen self-attention components, helping the model accommodate differences between pretraining and downstream data. Evaluation covers three passive-sonar datasets and two active-sonar image datasets. On VTUAD, HPT achieved 91.8% mean classification accuracy with 153,000 trainable parameters, compared with 89.8% for the best tested conventional adapter. The method also remained competitive with other parameter-efficient approaches on active sonar imagery.</p>

@@ -14,7 +14,7 @@
   image: /assets/images/research/method-from-pdf.png
   image_alt: The supplied method figure shows image and text encoding, multiple instance learning, visual adaptation, task residuals, and slide-level prediction.
   summary: Frozen pathology encoders and small adaptation modules predict ethanol drinking status from nonhuman primate liver slides, reaching 78.1% mean balanced accuracy with four training subjects per class.
-  feature_title: Evaluation of parameter-efficient vision-language models for digital pathology
+  feature_title: Evaluating parameter-efficient vision-language modeling for few-shot computational pathology
 - id: hpt
   title: Histogram-based Parameter-efficient Tuning for Passive and Active Sonar Classification
   authors:
@@ -33,7 +33,7 @@
   links:
   - label: Paper
     url: https://ieeexplore.ieee.org/abstract/document/11730373
-  feature_title: Distribution-aware foundation-model adaptation
+  feature_title: Distribution-guided parameter-efficient tuning for waveform-based sensing
 - id: ssatkd
   title: Structural and Statistical Audio Texture Knowledge Distillation for Acoustic Classification
   authors:

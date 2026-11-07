@@ -65,9 +65,12 @@ try:
                 layout = page.evaluate("""() => ({
                     width: innerWidth,
                     content: document.documentElement.scrollWidth,
+                    footerBottom: document.querySelector('.site-footer').getBoundingClientRect().bottom,
+                    viewportHeight: innerHeight,
                     badImages: [...document.images].filter(i => !i.complete || !i.naturalWidth).map(i => i.src)
                 })""")
                 assert layout["content"] <= layout["width"] + 1, (route, width, "horizontal overflow", layout)
+                assert layout["footerBottom"] >= layout["viewportHeight"] - 1, (route, width, "footer above viewport bottom", layout)
                 assert not layout["badImages"], (route, layout["badImages"])
                 assert page.locator("a[download]").count() == 0
                 assert page.locator("nav[aria-label='Main navigation'] a").last.get_attribute("href") == BASE + "/documents/Amir_CV_2026.pdf"

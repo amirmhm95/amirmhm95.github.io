@@ -6,4 +6,3 @@ hide_heading: true
 description: Peer-reviewed publications by Amirmohammad Mohammadi, with paper and resource links.
 ---
 <section class="section publication-section" aria-labelledby="reviewed-title"><h2 id="reviewed-title">Peer-reviewed publications</h2><div class="publication-list">{% assign reviewed = site.data.publications | where: 'group', 'peer_reviewed' %}{% for publication in reviewed %}{% include portfolio/publication.html publication=publication %}{% endfor %}</div></section>
-<p class="small-note">Last reviewed {{ site.updated | date: '%B %-d, %Y' }}.</p>

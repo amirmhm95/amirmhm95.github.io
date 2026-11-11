@@ -265,6 +265,13 @@ body > .site-header,body > .site-footer {
   margin: 1.4rem 0
 }
 
+.hero-actions {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  max-width: 27rem;
+  gap: .65rem
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -966,6 +973,13 @@ body > .site-header,body > .site-footer {
   }
   .hero-description {
     font-size: 1rem
+  }
+  .hero-actions {
+    gap: .5rem
+  }
+  .hero-actions .button {
+    padding-inline: .35rem;
+    font-size: .82rem
   }
   .portrait {
     order: -1;

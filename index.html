@@ -13,8 +13,3 @@ home: true
   </div>
   <figure class="portrait"><picture><source type="image/webp" srcset="{{ '/assets/images/portrait.webp' | relative_url }}"><img src="{{ '/assets/images/portrait.jpg' | relative_url }}" width="456" height="562" alt="Amir Mohammadi wearing a Texas A&M shirt" fetchpriority="high" decoding="async"></picture></figure>
 </section>
-
-<section class="section" aria-labelledby="selected-title">
-  <div class="section-heading"><h2 id="selected-title">Research highlights</h2></div>
-  <div class="featured-grid">{% for publication_id in profile.featured_publications %}{% assign publication = site.data.publications | where: 'id', publication_id | first %}{% include portfolio/publication.html publication=publication featured=true %}{% endfor %}</div>
-</section>

@@ -10,6 +10,7 @@ description: Research on parameter-efficient vision-language modeling for few-sh
   <div class="project-grid">
     <div class="project-copy">
       <p>This proof-of-concept study evaluates parameter-efficient adaptation of CONCH, a pretrained pathology vision-language model, to predict ethanol drinking status from rhesus macaque liver whole-slide images. The pipeline, built upon the MIL-Adapter framework, combines attention-based multiple instance learning with visual adapters or learned residuals in the text embeddings while keeping the image and text encoders frozen. Using 37 slides and four training subjects per class, a visual adapter achieved 78.1% mean balanced accuracy, compared with 43.5% for the baseline without adaptation. Evaluation used subject-disjoint training, validation, and test sets over 30 runs.</p>
+      <ul class="resource-links"><li><a href="https://arxiv.org/abs/2611.17105">paper</a></li></ul>
     </div>
     <figure class="research-figure">
       <a href="{{ '/assets/images/research/method-from-pdf.png' | relative_url }}"><img src="{{ '/assets/images/research/method-from-pdf.png' | relative_url }}" alt="Method figure showing tissue patches, frozen image and text encoders, multiple instance learning, a visual adapter, task residuals, and cosine-similarity prediction." width="4320" height="2418" loading="lazy"></a>
